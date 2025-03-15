@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content id="SWI_Extension_SithExtension" name="SWI Active Sith Faction" description="Acive Sith faction mod with a Closed Loop Economy, for SWI version 0.8X. Closed Loop Reborn mod is optional, as the mod includes its own CL recipes." author="Dhomie/Grandpa Sawyer" version="110" date="2024-09-14" save="1" enabled="1">
+  <dependency id="SW Interworlds" name="Star Wars Interworlds" optional="false"/>
+  <dependency id="starwarsmod_cl_reborn" optional="true" name="SWI - Closed Loop Reborn"/>
+</content>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+
+	<!-- NOTE: Wild Space 1 and 2 are internally named as "ur4", and "ur5", meaning they are part of the unknown region naming scheme -->
+    <add sel="//macros">
+	<!-- Connect the Hapes Cluster with MDW frontline -->
+		<!-- Taanab -> Roqoo JG -->
+		<macro name="swi_gate_roqoo_zone_clustertaanab_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_ctaanab_croqoo_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="300" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Roqoo -> Taanab JG -->
+		<macro name="swi_gate_taanab_zone_clusterroqoo_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_croqoo_ctaanab_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="120" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Thule -> Ziost JG -->
+		<macro name="swi_gate_ziost_zone_clusterthule_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_cthule_cziost_connection" ref="gates">
+					<offset>
+						<position x="0" y="500" z="0" />
+						<rotation yaw="210" pitch="0" roll="0" />
+					</offset>
+					<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Ziost -> Thule JG -->
+		<macro name="swi_gate_thule_zone_clusterziost_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_cziost_cthule_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="60" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Ziost -> Korriban JG -->
+		<macro name="swi_gate_korriban_zone_clusterziost_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_cziost_ckorriban_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="360" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Korriban -> Ziost JG -->
+		<macro name="swi_gate_ziost_zone_clusterkorriban_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_ckorriban_cziost_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="180" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Korriban -> Stenos JG -->
+		<macro name="swi_gate_stenos_zone_clusterkorriban_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_ckorriban_cstenos_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="360" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Stenos -> Korriban JG -->
+		<macro name="swi_gate_korriban_zone_clusterstenos_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_cstenos_ckorriban_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="180" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Stenos -> Wild Space 1 JG -->
+		<macro name="swi_gate_ur4_zone_clusterstenos_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_cstenos_cur4_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="300" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Wild Space 1 -> Stenos JG -->
+		<macro name="swi_gate_stenos_zone_clusterur4_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_cur4_cstenos_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="180" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Stenos -> Saleucami JG -->
+		<macro name="swi_gate_saleucami_zone_clusterstenos_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_cstenos_csaleucami_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="0" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+		
+		<!-- Saleucami -> Stenos JG -->
+		<macro name="swi_gate_stenos_zone_clustersaleucami_sector001_macro" class="zone">
+			<component ref="standardzone" />
+			<connections>
+				<connection name="swi_gate_csaleucami_cstenos_connection" ref="gates">
+				<offset>
+					<position x="0" y="500" z="0" />
+					<rotation yaw="180" pitch="0" roll="0" />
+				</offset>
+				<macro ref="props_gates_anc_gate_macro" connection="space" />
+				</connection>
+			</connections>
+		</macro>
+	</add>
+</diff>

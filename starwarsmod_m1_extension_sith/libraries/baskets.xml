@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<diff>
+	<add sel="/baskets">
+		<basket id="sith_minerals" name="sith minerals" description="only required minerals for closed loop production">
+			<wares>
+			<ware ware="ore" />
+			<ware ware="silicon" />
+			<ware ware="ice" />
+		</wares>
+		</basket>
+	
+		<basket id="sith_gases" name="sith gases" description="only required gases for closed loop production">
+			<wares>
+			<ware ware="methane" />
+			<ware ware="helium" />
+		</wares>
+		</basket>
+	</add>
+  
+	<!-- Add missing Sith/Terran wares to the basket -->
+  	<add sel="/baskets/basket[@id='all_container']/wares">
+		<ware ware="computronicsubstrate" />
+        <ware ware="metallicmicrolattice" />
+        <ware ware="siliconcarbide" />
+        <ware ware="rhydoniumcell" />
+        <ware ware="shipsupplies" />
+        <ware ware="terranmre" />
+        <ware ware="proteinpaste" />
+	</add>
+</diff>

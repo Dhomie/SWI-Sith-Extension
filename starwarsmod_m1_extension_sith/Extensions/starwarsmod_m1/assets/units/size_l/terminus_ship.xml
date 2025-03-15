@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<diff>
+	<replace sel="//component[@name='terminus_ship']/connections/connection[@name='con_m_turret_center-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbquad mtbdual red green hittable</replace>
+	<replace sel="//component[@name='terminus_ship']/connections/connection[@name='con_m_turret_center-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbquad mtbdual red green hittable</replace>
+	<replace sel="//component[@name='terminus_ship']/connections/connection[@name='con_m_turret_center-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbquad mtbdual red green hittable</replace>
+	<replace sel="//component[@name='terminus_ship']/connections/connection[@name='con_m_turret_center-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbquad mtbdual red green hittable</replace>
+	<replace sel="//component[@name='terminus_ship']/connections/connection[@name='con_m_turret_center-mtb_5']/@tags">turret medium md_mando mtbsingled10 mtbquad mtbdual red green hittable</replace>
+</diff>
+

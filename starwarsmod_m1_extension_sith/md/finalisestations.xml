@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<diff>
+
+  <!-- Add the Sith race so the AI knows to build habitation modules for them -->
+  <replace sel="/mdscript/cues/cue[@name='God_DefaultFinaliseFactory']/actions/set_value[@name='$Hab_ValidRaces']/@exact">[race.argon, race.boron, race.paranid, race.teladi, race.split, race.terran, race.imperial, race.sith]</replace>
+  <replace sel="/mdscript/cues/library[@name='NewStation_GenerateFactory']/actions/set_value[@name='$Hab_ValidRaces']/@exact">[race.argon, race.boron, race.paranid, race.teladi, race.split, race.terran, race.imperial, race.sith]</replace>
+</diff>

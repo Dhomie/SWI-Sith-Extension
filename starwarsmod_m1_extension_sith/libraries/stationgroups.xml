@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<diff>
+	<add sel="//groups">
+		<group name="defence_sith">
+			<select constructionplan="sith_defence"/>
+		</group>
+		<group name="tradestation_sith">
+			<select constructionplan="imperial_tradestation"/>
+		</group>
+		<group name="equipmentdock_sith">
+			<select constructionplan="sith_equipmentdock"/>
+		</group>
+		<group name="solar_power_plant_sith">
+			<select constructionplan="sith_solar_power_plant"/>
+		</group>
+		<group name="recycling_plant_sith">
+			<select constructionplan="sith_recycling_plant"/>
+		</group>
+		<group name="durasteel_plant_sith">
+			<select constructionplan="sith_durasteel_plant"/>
+		</group>
+		<group name="wharf_sith">
+			<select constructionplan="sith_wharf"/>
+		</group>
+		<group name="claytronics_plant_sith">
+			<select constructionplan="sith_claytronics_plant"/>
+		</group>
+		<group name="pharmaceutical_plant_sith">
+			<select constructionplan="sith_pharmaceutical_plant"/>
+		</group>
+	</add>
+</diff>

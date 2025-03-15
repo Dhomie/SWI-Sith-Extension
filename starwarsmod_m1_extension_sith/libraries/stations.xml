@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="libraries.xsd">
+	<add sel="//stations">
+		<!-- Sith Empire  -->
+		<station id="defence_sith" group="defence_sith">
+			<category tags="defence" faction="[sith]" />
+		</station>
+		<station id="wharf_sith" group="wharf_sith">
+			<category tags="wharf" faction="[sith]" />
+		</station>
+		<station id="equipmentdock_sith" group="equipmentdock_sith">
+			<category tags="equipmentdock" faction="[sith]" />
+		</station>
+		<station id="tradestation_sith" group="tradestation_imperial">
+			<category tags="tradestation" faction="[sith]"/>
+		</station>
+		<station id="solar_power_plant_sith" group="solar_power_plant_sith">
+			<category tags="sith_solar_power_plant" faction="[sith]"/>
+		</station>
+		<station id="recycling_plant_sith" group="recycling_plant_sith">
+			<category tags="sith_recycling_plant" faction="[sith]"/>
+		</station>
+		<station id="durasteel_plant_sith" group="durasteel_plant_sith">
+			<category tags="sith_durasteel_plant" faction="[sith]"/>
+		</station>
+		<station id="claytronics_plant_sith" group="claytronics_plant_sith">
+			<category tags="sith_claytronics_plant" faction="[sith]"/>
+		</station>
+		<station id="pharmaceutical_plant_sith" group="pharmaceutical_plant_sith">
+			<category tags="sith_pharmaceutical_plant" faction="[sith]"/>
+		</station>
+	</add>
+</diff>

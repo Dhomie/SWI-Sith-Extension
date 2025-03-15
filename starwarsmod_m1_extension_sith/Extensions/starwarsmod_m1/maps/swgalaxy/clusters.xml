@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+	<add sel="/macros">
+		<!-- Sith Core Space Cluster -->
+		<!--
+		<macro name="swi_cluster_sith_core_macro" class="cluster">
+			<component ref="standardcluster" />
+			<connections>
+				<connection name="swi_clusterziost_sector001_connection" ref="sectors">  
+					<macro ref="swi_clusterziost_sector001_macro" connection="cluster" />
+				</connection>
+				<connection name="swi_clusterthule_sector001_connection" ref="sectors">  
+					<macro ref="swi_clusterthule_sector001_macro" connection="cluster" />
+					<offset>
+						<position x="-55073532" y="0" z="-159401120" />
+					</offset>
+				</connection>
+				<connection name="swi_clusterdromundkaas_sector001_connection" ref="sectors">  
+					<macro ref="swi_clusterdromundkaas_sector001_macro" connection="cluster" />
+					<offset>
+						<position x="55073532" y="0" z="159401120" />
+					</offset>
+				</connection>
+				<connection name="swi_clusterkorriban_sector001_connection" ref="sectors">  
+					<macro ref="swi_clusterkorriban_sector001_macro" connection="cluster" />
+					<offset>
+						<position x="55073532" y="0" z="-159401120" />
+					</offset>
+				</connection>
+				<connection ref="content">
+					<macro>
+						<component connection="space" ref="ziost" />
+					</macro>
+				</connection>
+				<connection ref="content">
+					<macro>
+					<component connection="space" ref="thule" />
+					</macro>
+				</connection>
+				<connection ref="content">
+					<macro>
+					<component connection="space" ref="dromundkaas" />
+					</macro>
+				</connection>
+				<connection ref="content">
+					<macro>
+						<component connection="space" ref="korriban" />
+					</macro>
+				</connection>
+			</connections>
+		</macro>
+		-->
+	</add>
+</diff>

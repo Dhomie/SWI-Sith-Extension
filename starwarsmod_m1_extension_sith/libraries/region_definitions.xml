@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<diff>
+	<!-- Add Scrap fields to Stenos -->
+	<!--
+	<add sel="//regions/region[@name='globalregion_swi_clusterstenos_sector001_macro']/fields">
+		<debris groupref="debris_xl" densityfactor="0.1" rotation="0" rotationvariation="10" noisescale="10000" seed="32" minnoisevalue="0.5" maxnoisevalue="1" />
+        <debris groupref="debris_l" densityfactor="0.1" rotation="0" rotationvariation="10" noisescale="10000" seed="32" minnoisevalue="0.4" maxnoisevalue="1" />
+        <debris groupref="debris_m" densityfactor="0.2" rotation="360" rotationvariation="10" noisescale="10000" seed="32" minnoisevalue="0.3" maxnoisevalue="1" />
+        <debris groupref="debris_s" densityfactor="0.3" rotation="360" rotationvariation="10" noisescale="10000" seed="32" minnoisevalue="0.2" maxnoisevalue="1" />
+	</add>
+	-->
+	
+	<!-- Add Scrap resource to Stenos -->
+	<!--
+	<add sel="//regions/region[@name='globalregion_swi_clusterstenos_sector001_macro']/resources">
+		<resource ware="rawscrap" yield="medium" />
+	</add>
+	-->
+</diff>

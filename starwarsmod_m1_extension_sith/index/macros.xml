@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ?xml-stylesheet href="index.xsl" type="text\xsl" ? -->
+<diff>
+	<add sel="/index">
+		<!-- L -->
+		<entry name="gage_macro" value="extensions\starwarsmod_m1_extension_sith\assets\units\size_l\macros\gage_macro" />
+		
+		<!-- Habitation Modules -->
+		<entry name="hab_sith_l_01_macro" value="extensions\starwarsmod_m1_extension_sith\assets\structures\habitat\macros\hab_sith_l_01_macro" />
+		<entry name="hab_sith_m_01_macro" value="extensions\starwarsmod_m1_extension_sith\assets\structures\habitat\macros\hab_sith_m_01_macro" />
+		<entry name="hab_sith_s_01_macro" value="extensions\starwarsmod_m1_extension_sith\assets\structures\habitat\macros\hab_sith_s_01_macro" />
+	</add>
+
+</diff>

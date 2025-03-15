@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/groups">
+		<!-- Sith production module groups -->
+		<group name="prod_sith_computronicsubstrate">
+			<select macro="prod_sith_computronicsubstrate_macro" />
+		</group>
+		<group name="prod_sith_metallicmicrolattice">
+			<select macro="prod_sith_metallicmicrolattice_macro" />
+		</group>
+		<group name="prod_sith_proteinpaste">
+			<select macro="prod_sith_proteinpaste_macro" />
+		</group>
+		<group name="prod_sith_siliconcarbide">
+			<select macro="prod_sith_siliconcarbide_macro" />
+		</group>
+		<group name="prod_sith_mre">
+			<select macro="prod_sith_mre_macro" />
+		</group>
+		<group name="prod_sith_shipsupplies">
+			<select macro="prod_sith_shipsupplies_macro" />
+		</group>
+
+		<!-- Sith Habitation Module Groups -->
+		<group name="hab_sith">
+			<select macro="hab_sith_l_01_macro" />
+			<select macro="hab_sith_m_01_macro" />
+			<select macro="hab_sith_s_01_macro" />
+		</group>
+	</add>
+</diff>

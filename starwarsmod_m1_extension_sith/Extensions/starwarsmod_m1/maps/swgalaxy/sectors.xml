@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+	<!-- Tanaab - Roqoo JG connection -->
+	<add sel="/macros/macro[@name='swi_clustertaanab_sector001_macro']/connections">
+		<connection name="swi_gate_roqoo_clustertaanab_sector001_connection" ref="zones">
+            <offset>
+				<position x="75000" y="0" z="-75000" />
+            </offset>
+            <macro ref="swi_gate_roqoo_zone_clustertaanab_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+	
+	<add sel="/macros/macro[@name='swi_clusterroqoo_sector001_macro']/connections">
+		<connection name="swi_gate_taanab_clusterroqoo_sector001_connection" ref="zones">
+            <offset>
+				<position x="-165000" y="0" z="165000" />
+            </offset>
+            <macro ref="swi_gate_taanab_zone_clusterroqoo_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+
+	<!-- Thule - Ziost JG connection -->
+	<add sel="/macros/macro[@name='swi_clusterthule_sector001_macro']/connections">
+		<connection name="swi_gate_ziost_clusterthule_sector001_connection" ref="zones">
+            <offset>
+				<position x="165000" y="0" z="120000" />
+            </offset>
+            <macro ref="swi_gate_ziost_zone_clusterthule_sector001_macro" connection="sector" />
+          </connection>
+	</add>
+	
+	<add sel="/macros/macro[@name='swi_clusterziost_sector001_macro']/connections">
+		<connection name="swi_gate_thule_clusterziost_sector001_connection" ref="zones">
+            <offset>
+				<position x="-165000" y="0" z="-165000" />
+            </offset>
+            <macro ref="swi_gate_thule_zone_clusterziost_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+	
+	<!-- Ziost -> Korriban JG connection -->
+	<add sel="/macros/macro[@name='swi_clusterziost_sector001_macro']/connections">
+		<connection name="swi_gate_korriban_clusterziost_sector001_connection" ref="zones">
+            <offset>
+				<position x="0" y="0" z="-175000" />
+            </offset>
+            <macro ref="swi_gate_korriban_zone_clusterziost_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+	
+	<add sel="/macros/macro[@name='swi_clusterkorriban_sector001_macro']/connections">
+		<connection name="swi_gate_ziost_clusterkorriban_sector001_connection" ref="zones">
+            <offset>
+				<position x="0" y="0" z="175000" />
+            </offset>
+            <macro ref="swi_gate_ziost_zone_clusterkorriban_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+	
+	<!-- Korriban - Stenos JG connection -->
+	<add sel="/macros/macro[@name='swi_clusterkorriban_sector001_macro']/connections">
+		<connection name="swi_gate_stenos_clusterkorriban_sector001_connection" ref="zones">
+            <offset>
+				<position x="0" y="0" z="-125000" />
+            </offset>
+            <macro ref="swi_gate_stenos_zone_clusterkorriban_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+	
+	<add sel="/macros/macro[@name='swi_clusterstenos_sector001_macro']/connections">
+		<connection name="swi_gate_korriban_clusterstenos_sector001_connection" ref="zones">
+            <offset>
+				<position x="0" y="0" z="175000" />
+            </offset>
+            <macro ref="swi_gate_korriban_zone_clusterstenos_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+	
+	<!-- Stenos - Wild Space 1 JG connection -->
+	<add sel="/macros/macro[@name='swi_clusterstenos_sector001_macro']/connections">
+		<connection name="swi_gate_ur4_clusterstenos_sector001_connection" ref="zones">
+            <offset>
+				<position x="135000" y="0" z="25000" />
+            </offset>
+            <macro ref="swi_gate_ur4_zone_clusterstenos_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+	
+	<add sel="/macros/macro[@name='swi_clusterur4_sector001_macro']/connections">
+		<connection name="swi_gate_stenos_clusterur4_sector001_connection" ref="zones">
+            <offset>
+				<position x="0" y="0" z="135000" />
+            </offset>
+            <macro ref="swi_gate_stenos_zone_clusterur4_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+	
+	<!-- Stenos - Saleucami JG connection -->
+	<add sel="/macros/macro[@name='swi_clusterstenos_sector001_macro']/connections">
+		<connection name="swi_gate_saleucami_clusterstenos_sector001_connection" ref="zones">
+            <offset>
+				<position x="0" y="0" z="-150000" />
+            </offset>
+            <macro ref="swi_gate_saleucami_zone_clusterstenos_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+	
+	<add sel="/macros/macro[@name='swi_clustersaleucami_sector001_macro']/connections">
+		<connection name="swi_gate_stenos_clustersaleucami_sector001_connection" ref="zones">
+            <offset>
+				<position x="0" y="0" z="150000" />
+            </offset>
+            <macro ref="swi_gate_stenos_zone_clustersaleucami_sector001_macro" connection="sector" />
+        </connection>
+	</add>
+</diff>

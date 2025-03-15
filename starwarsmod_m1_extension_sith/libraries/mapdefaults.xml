@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+<!-- System solar output, and gamestart station count adjustments -->
+<!-- Adding *factionlogic="false"* variable to *area* will prevent the AI factions from claiming it by normal means -->
+
+	<!-- Sith core sectors -->
+	<!--
+	<add sel="//defaults">
+		<dataset macro="swi_cluster_sith_space_macro">
+			<properties>
+				<identification name="{7112025,12}" description="{7112025,13}" system="100"/>
+			</properties>
+		</dataset>
+	</add>
+	-->
+
+	<replace sel="/defaults/dataset[@macro='swi_clusterziost_macro']/properties/area">
+		<area sunlight="5.0" economy="1" security="1" />
+	</replace>
+	
+	<add sel="/defaults/dataset[@macro='swi_clusterziost_macro']/properties">
+		<system>
+			<space environment="{1042,12011}(Clear Space)"/>
+			<suns>
+				<sun class="{1042,13021}(Yellow Dwarf)"/>
+			</suns>
+			<planets>
+				<planet name="{7112025,9}(Ziost)" class="{1042,14101}(Earth Analog)" geology="{1042,15121}(Swamp)" atmosphere="{1042,11071}(Nitrogen/Oxygen)" population="{1042,10021}" maxpopulation="1818450000" settlements="{1042,16041}(Multiple Cities)" part="planet"/>
+			</planets>
+		</system>
+	</add>
+	
+	<replace sel="/defaults/dataset[@macro='swi_clusterdromundkaas_macro']/properties/area">
+		<area sunlight="1.25" economy="1" security="1" />
+	</replace>
+	
+	<replace sel="/defaults/dataset[@macro='swi_clustercorbos_macro']/properties/area">
+		<area sunlight="3.0" economy="1" security="1" />
+	</replace>
+	
+<!-- Adjustments to allow expansion on the South-East part of the galaxy, mostly for the newly added systems -->
+<!-- Orto Plutonia's faction logic remains vanilla, meaning disabled! -->
+
+	<!-- Enabled faction logic, solar output buffed from 0.9 to 1.0 -->
+	<replace sel="/defaults/dataset[@macro='swi_clustertargonn_macro']/properties/area">
+		<area sunlight="1.0" economy="1" security="1" />
+	</replace>
+	
+	<replace sel="/defaults/dataset[@macro='swi_clusterur5_macro']/properties/area">
+		<area sunlight="0.5" economy="1" security="1" tags="seur" />
+	</replace>
+	
+	<replace sel="/defaults/dataset[@macro='swi_clusterur4_macro']/properties/area">
+		<area sunlight="0.8" economy="1" security="1" tags="seur" />
+	</replace>
+	
+	<!-- Enabled faction logic, solar output buffed from 2.0 to 3.5 -->
+	<replace sel="/defaults/dataset[@macro='swi_clusterrentasia_macro']/properties/area">
+		<area sunlight="3.5" economy="1" security="1" tags="seur" />
+	</replace>
+	
+	<!-- Solar output buffed from 1.4 to 1.5 -->
+	<replace sel="/defaults/dataset[@macro='swi_clusterrothana_macro']/properties/area">
+		<area sunlight="1.5" economy="1" security="1" />
+	</replace>
+	
+	<!-- Enabled faction logic, solar output from 0.9 to 1.0 -->
+	<replace sel="/defaults/dataset[@macro='swi_clustergaulus_macro']/properties/area">
+		<area sunlight="1.0" economy="1" security="1" />
+	</replace>
+	
+	<!-- Enabled faction logic -->
+	<replace sel="/defaults/dataset[@macro='swi_clustersmugglersrun_macro']/properties/area">
+		<area sunlight="0.5" economy="1" security="1" />
+	</replace>
+	
+	<!-- Enabled faction logic -->
+	<replace sel="/defaults/dataset[@macro='swi_clusterwrea_macro']/properties/area">
+		<area sunlight="0.5" economy="1" security="1" />
+	</replace>
+	
+<!-- Let the NRL jump into the action -->
+	<!-- Enabled faction logic -->
+	<replace sel="/defaults/dataset[@macro='swi_clustersaleucami_macro']/properties/area">
+		<area sunlight="1.0" economy="1" security="1" />
+	</replace>
+</diff>

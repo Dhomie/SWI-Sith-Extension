@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Setup_SWI_Extension_Sith" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+	<cues>
+		<!-- Will run once, either on gamestart or when a game is loaded where this DLC was not active before -->
+		<cue name="Setup" namespace="this">
+			<!-- Spawn Sith stations on a loaded save where this mod wasn't active before. -->
+			<conditions>
+				<check_all>
+					<check_any>
+						<event_cue_signalled cue="md.Setup.Start"/>
+						<event_game_loaded/>
+					</check_any>
+					<check_value value="player.galaxy.macro == macro.swi_galaxy_macro" comment="Not in demo galaxies" />
+				</check_all>
+			</conditions>
+
+			<actions>
+				<!-- Find Korriban -->
+				<find_sector name="$Korriban" macro="macro.swi_clusterkorriban_sector001_macro" comment="Sith EQ Dock System"/>
+				<find_sector name="$Ziost" macro="macro.swi_clusterziost_sector001_macro" comment="Sith Home System"/>
+
+				<!-- Find the EQ Dock -->
+				<find_station_by_true_owner name="$SithEquipmentDock" faction="faction.sith" space="$Korriban" equipmentdock="true">
+					<match_content checkoperational="true">
+						<match_dock size="tag.dock_s"/>
+					</match_content>
+				</find_station_by_true_owner>
+
+				<!-- If we couldn't find it, begin spawning -->
+				<do_if value="not $SithEquipmentDock">
+					<!-- Korriban EQ Dock -->
+					<run_actions ref="CreateStation" >
+						<param name="StationID" value="'sith_equipmentdock_01'" />
+						<param name="Sector" value="$Korriban" />
+					</run_actions>
+					
+					<!-- Ziost Economy Stations -->
+					<run_actions ref="CreateStation">
+						<param name="StationID" value="'sith_ziost_solar_power_plant'" />
+						<param name="Sector" value="$Ziost" />
+					</run_actions>
+					
+					<run_actions ref="CreateStation">
+						<param name="StationID" value="'sith_ziost_durasteel_plant'" />
+						<param name="Sector" value="$Ziost" />
+					</run_actions>
+					
+					<run_actions ref="CreateStation">
+						<param name="StationID" value="'sith_ziost_claytronics_plant'" />
+						<param name="Sector" value="$Ziost" />
+					</run_actions>
+					
+					<run_actions ref="CreateStation">
+						<param name="StationID" value="'sith_ziost_pharmaceutical_plant'" />
+						<param name="Sector" value="$Ziost" />
+					</run_actions>
+					
+					<!-- Clean up the values -->
+					<remove_value name="$Korriban" />
+					<remove_value name="$Ziost" />
+					<remove_value name="$SithEquipmentDock" />
+				</do_if>
+			</actions>
+		</cue>
+		
+		<!-- Run Start_Actions on a new game -->
+		<cue name="Start" namespace="this">
+			<actions>
+				<include_actions ref="Start_Actions"/>
+				<cancel_cue cue="Game_Loaded"/>
+			</actions>
+		</cue>
+		<!-- Run Start_Actions when loading a savegame with the mod enabled for the first time -->
+		<cue name="Game_Loaded" namespace="this">
+			<conditions>
+				<event_game_loaded/>
+			</conditions>
+			<actions>
+				<include_actions ref="Start_Actions"/>
+				<cancel_cue cue="Start"/>
+			</actions>
+		</cue>
+		
+		<!-- Create Research data -->
+		<library name="Start_Actions">
+			<actions>
+				<!-- TODO: Set up research data here -->
+			</actions>
+		</library>
+		
+		<!-- Library function for easy spawning of stations -->
+		<library name="CreateStation" purpose="run_actions">
+			<params>
+				<param name="StationID" />
+				<param name="Sector" />
+			</params>
+			<actions>
+				<!-- Find the station, and spawn it if we couldn't do so -->
+				<find_station name="$Station" godstationentry="$StationID" space="$Sector" required="true"/>
+				<do_if value="not $Station">
+					<create_god_station name="$Station" id="$StationID"/>
+				</do_if>
+			</actions>
+			
+			<!-- Clean up the values -->
+			<remove_value name="$Station" />
+		</library>
+	</cues>
+</mdscript>

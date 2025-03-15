@@ -1,0 +1,1617 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<diff>
+
+	<!-- Remove some of the newly added military jobs, we'll use our own instead -->
+	<remove sel="/jobs/job[@id='sith_harrower_late']" />
+	<remove sel="/jobs/job[@id='sith_harrower_i_late']" />
+	<remove sel="/jobs/job[@id='sith_harrower_inquisition_late']" />
+	<remove sel="/jobs/job[@id='sith_harrower_inquisition']" />
+	<remove sel="/jobs/job[@id='sith_harrower_inquisition_rare']" />
+	<remove sel="/jobs/job[@id='sith_fighter_outer_patrol']" />
+	
+	<!-- Sith Harrower defense-only patrols, replacing the original -->
+	<replace sel="//jobs/job[@id='sith_harrower']">
+		<job id="sith_harrower" name="{999840,610510}">
+			<modifiers commandeerable="true" />
+			<orders>
+			<order order="Patrol" default="true">
+				<param name="range" value="class.cluster" />
+			</order>
+			</orders>
+			<category faction="sith" tags="[military, harrower]" size="ship_xl" />
+			<quota galaxy="1" maxgalaxy="6" sector="1" />
+			<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+			<environment buildatshipyard="true" />
+			<ship>
+			<select faction="sith" tags="[military, harrower]" size="ship_xl" />
+			<loadout>
+				<level exact="1.0" />
+				<variation exact="0" />
+			</loadout>
+			<owner exact="sith" overridenpc="true" />
+			</ship>
+			<subordinates>
+				<subordinate job="sith_assault_escort_l" assignment="defence"/>
+				<subordinate job="sith_raider_assault_escort_m" assignment="defence"/>
+				<subordinate job="sith_fighter_l_escort" assignment="attack"/>
+				<subordinate job="sith_fighter_l_escort" assignment="attack"/>
+			</subordinates>
+		</job>
+	</replace>
+	
+	<!-- Sith Harrower Inquisitor defense-only patrols, replacing the original -->
+	<replace sel="//jobs/job[@id='sith_harrower_i']">
+		<job id="sith_harrower_i" name="{999840,610510}">
+			<modifiers commandeerable="true" />
+			<orders>
+			<order order="Patrol" default="true">
+				<param name="range" value="class.cluster" />
+			</order>
+			</orders>
+			<category faction="sith" tags="[military, harrower_i]" size="ship_xl" />
+			<quota galaxy="1" maxgalaxy="6" sector="1" />
+			<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+			<environment buildatshipyard="true" />
+			<ship>
+			<select faction="sith" tags="[military, harrower_i]" size="ship_xl" />
+			<loadout>
+				<level exact="1.0" />
+				<variation exact="0" />
+			</loadout>
+			<owner exact="sith" overridenpc="true" />
+			</ship>
+			<subordinates>
+				<subordinate job="sith_terminus_assault_escort_l" assignment="defence"/>
+				<subordinate job="sith_raider_assault_escort_m" assignment="defence"/>
+				<subordinate job="sith_fighter_l_escort" assignment="attack"/>
+				<subordinate job="sith_fighter_l_escort" assignment="attack"/>
+				<subordinate job="sith_fighter_l_escort" assignment="attack"/>
+			</subordinates>
+		</job>
+	</replace>
+	
+	<!-- Sith Destroyer patrols, replacing the original as the primary job for the ship -->
+	<replace sel="//jobs/job[@id='sith_destroyer']">
+		<job id="sith_destroyer" name="{999840,611710}">
+			<modifiers commandeerable="true" />
+			<orders>
+				<order order="Patrol" default="true">
+					<param name="range" value="class.sector" />
+				</order>
+			</orders>
+			<category faction="sith" tags="[factionlogic, military, sith_destroyer]" size="ship_l" />
+			<quota galaxy="6" maxgalaxy="12" sector="1" />
+			<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+			<environment buildatshipyard="true" />
+			<ship>
+				<select faction="sith" tags="[military, sith_destroyer]" size="ship_l" />
+				<loadout>
+					<level exact="1.0" />
+					<variation exact="0" />
+				</loadout>
+				<owner exact="sith" overridenpc="true" />
+			</ship>
+			<subordinates>
+				<subordinate job="sith_m_assault_escort" assignment="attack"/>
+				<subordinate job="sith_fighter_assault_escort" assignment="attack"/>
+			</subordinates>
+		</job>
+	</replace>
+	
+	<!-- Sith surgical Destroyer patrols, replacing the original as the secondary job for the ship -->
+	<replace sel="//jobs/job[@id='sith_destroyer_surgical']">
+		<job id="sith_destroyer_surgical" name="{999840,611710}">
+			<modifiers commandeerable="true" />
+			<orders>
+				<order order="Patrol" default="true">
+					<param name="range" value="class.sector" />
+				</order>
+			</orders>
+			<category faction="sith" tags="[factionlogic, military, sith_destroyer, surgical]" size="ship_l" />
+			<quota galaxy="1" maxgalaxy="3" sector="1" />
+			<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+			<environment buildatshipyard="true" />
+			<ship>
+				<select faction="sith" tags="[military, sith_destroyer]" size="ship_l" />
+				<loadout>
+					<level exact="1.0" />
+					<variation exact="0" />
+				</loadout>
+				<owner exact="sith" overridenpc="true" />
+			</ship>
+			<subordinates>
+				<subordinate job="sith_m_assault_escort" assignment="attack"/>
+				<subordinate job="sith_fighter_assault_escort" assignment="attack"/>
+			</subordinates>
+		</job>
+	</replace>
+	
+	<!-- Sith Miner jobs, these were added by SWI 0.85, gotta update these -->
+	<replace sel="//jobs/job[@id='sith_free_miner_l_liquid']">
+		<job id="sith_free_miner_l_liquid" name="{20204,5701}">
+			<modifiers rebuild="true" commandeerable="true" />
+			<orders>
+				<order order="MiningRoutine" default="true">
+					<param name="minbuy" value="0" />
+					<param name="maxbuy" value="5" />
+					<param name="minsell" value="0" />
+					<param name="maxsell" value="5" />
+				</order>
+			</orders>
+			<basket basket="gases" />
+			<category faction="sith" tags="[factionlogic, freighter, miner]" size="ship_l" />
+			<quota galaxy="20" maxgalaxy="25" sector="5" />
+			<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" regionbasket="gases" />	<!-- Was: *relation="self" comparison="exact"* -->
+			<environment buildatshipyard="true" />
+			<ship>
+				<select faction="sith" tags="[miner, liquid]" size="ship_l" />
+				<loadout>
+					<level exact="1" />
+				</loadout>
+				<owner exact="sith" overridenpc="true" />
+				<cargo>
+				<wares multiple="true">
+					<fillpercent min="0" max="100" profile="inversebell" />
+				</wares>
+				</cargo>
+			</ship>
+		</job>
+	</replace>
+
+	<replace sel="//jobs/job[@id='sith_free_miner_l_mineral']">
+		<job id="sith_free_miner_l_mineral" name="{20204,5601}">
+			<modifiers rebuild="true" commandeerable="true" />
+			<orders>
+				<order order="MiningRoutine" default="true">
+					<param name="minbuy" value="0" />
+					<param name="maxbuy" value="5" />
+					<param name="minsell" value="0" />
+					<param name="maxsell" value="5" />
+				</order>
+			</orders>
+			<basket basket="minerals" />
+			<category faction="sith" tags="[factionlogic, freighter, miner]" size="ship_l" />
+			<quota galaxy="20" maxgalaxy="25" sector="5" />
+			<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" regionbasket="minerals" />	<!-- Was: *relation="self" comparison="exact"* -->
+			<environment buildatshipyard="true" />
+			<ship>
+				<select faction="sith" tags="[miner, solid]" size="ship_l" />
+				<loadout>
+					<level exact="1" />
+				</loadout>
+			<owner exact="sith" overridenpc="true" />
+			<cargo>
+				<wares>
+					<fillpercent min="0" max="100" profile="inversebell" />
+				</wares>
+			</cargo>
+			</ship>
+		</job>
+	</replace>
+
+	<!-- Sith Empire expanded jobs -->
+	<add sel="/jobs">
+	  <!-- Sith starfighter recon-->
+	  <job id="sith_scout_patrol_s" name="{20204,2801}" comment="each border sector * 2">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="Recon" default="true" />
+        </orders>
+        <category faction="sith" tags="[factionlogic, scout]" size="ship_s" />
+        <quota galaxy="3" maxgalaxy="6" cluster="1" />
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="neutral" comparison="lt" matchextension="false" />
+        <environment buildatshipyard="true" preferbuilding="true" />
+        <ship>
+          <select faction="sith" tags="[military, fighter]" size="ship_s" />
+          <loadout>
+            <level max="1.0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith starfighter police-->
+	  <job id="sith_fighter_police" name="{999840,610210}" comment="each sector, expansion">
+        <modifiers commandeerable="false" />
+        <orders>
+          <order order="Police" default="true" />
+        </orders>
+        <category faction="sith" tags="[police]" size="ship_s" />
+        <quota galaxy="6" maxgalaxy="12" sector="1" />
+        <location class="galaxy" macro="swi_galaxy_macro" policefaction="sith" relation="self" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[military, fighter]" size="ship_s" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+        <subordinates>
+          <subordinate job="sith_fighter_escort" />
+        </subordinates>
+      </job>
+	
+	<!-- Expedition jobs, these will raid stuff even if no hostile bordering system(s) exist, they are also escorted by Harbor resupply ships -->
+	  <!-- Expeditionary Terminus -->
+	  <job id="sith_terminus_expedition" name="{7112025,1}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="Patrol" default="true">
+            <param name="range" value="class.cluster" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[factionlogic, military, terminus_inqusition, expedition]" size="ship_l" />
+        <quota galaxy="6" maxgalaxy="12" cluster="1"/>
+		<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true"/>
+        <ship>
+          <select faction="sith" tags="[military, terminus_inqusition]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+            <variation exact="0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+		<subordinates>
+			<subordinate job="sith_m_expedition_escort" assignment="defence"/>
+			<subordinate job="sith_fighter_l_escort" assignment="attack"/>
+        </subordinates>
+      </job>
+	  
+	  <!-- Expeditionary Harrower -->
+	  <job id="sith_harrower_expedition" name="{7112025,1}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="Patrol" default="true">
+            <param name="range" value="class.cluster" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[factionlogic, military, harrower, expedition]" size="ship_xl" />
+        <quota galaxy="3" maxgalaxy="6" cluster="1"/>
+		<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true"/>
+        <ship>
+          <select faction="sith" tags="[military, harrower]" size="ship_xl" />
+          <loadout>
+            <level exact="1.0" />
+            <variation exact="0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+		<subordinates>
+			<subordinate job="sith_resupplier_escort" assignment="supplyfleet" group="10"/>
+			<subordinate job="sith_expedition_escort_l" assignment="attack"/>
+			<subordinate job="sith_raider_expedition_escort_m" assignment="defence"/>
+			<subordinate job="sith_fighter_xl_escort" assignment="attack"/>
+        </subordinates>
+      </job>
+	  
+	  <!-- Expeditionary Harrower Inquisitor -->
+	  <job id="sith_harrower_i_expedition" name="{7112025,1}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="Patrol" default="true">
+            <param name="range" value="class.cluster" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[factionlogic, military, harrower_i, expedition]" size="ship_xl" />
+        <quota galaxy="3" maxgalaxy="6" cluster="1"/>
+		<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true"/>
+        <ship>
+          <select faction="sith" tags="[military, harrower_i]" size="ship_xl" />
+          <loadout>
+            <level exact="1.0" />
+            <variation exact="0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+		<subordinates>
+			<subordinate job="sith_resupplier_escort" assignment="supplyfleet" group="10"/>
+			<subordinate job="sith_terminus_expedition_escort_l" assignment="attack"/>
+			<subordinate job="sith_raider_expedition_escort_m" assignment="defence"/>
+			<subordinate job="sith_fighter_xl_escort" assignment="attack"/>
+        </subordinates>
+      </job>
+	  
+	  <!-- Expeditionary massive fleet -->
+	  <job id="sith_expedition_fleet" name="{7112025,11}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="Patrol" default="true">
+            <param name="range" value="class.cluster" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[factionlogic, military, harrower_i, expedition]" size="ship_xl" />
+        <quota galaxy="2" maxgalaxy="5" cluster="1"/>
+		<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true"/>
+        <ship>
+          <select faction="sith" tags="[military, harrower_i]" size="ship_xl" />
+          <loadout>
+            <level exact="1.0" />
+            <variation exact="0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+		<subordinates>
+			<subordinate job="sith_resupplier_escort" assignment="supplyfleet" group="10"/>
+			<subordinate job="sith_harrower_escort_xl" assignment="attack"/>
+			<subordinate job="sith_terminus_expedition_escort_l" assignment="attack"/>
+			<subordinate job="sith_raider_expedition_escort_m" assignment="defence"/>
+			<subordinate job="sith_fighter_xl_escort" assignment="attack"/>
+        </subordinates>
+      </job>
+	 
+	<!-- General invasion jobs -->
+	  <!-- Sith Terminus assault -->
+	  <job id="sith_terminus_assault" name="{999840,613310}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="Patrol" default="true">
+            <param name="range" value="class.cluster" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[factionlogic, military, terminus_inqusition, surgical]" size="ship_l" />
+        <quota galaxy="6" maxgalaxy="12" sector="1"/>
+		<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[military, terminus_inqusition]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+            <variation exact="0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+		<subordinates>
+			<subordinate job="sith_m_assault_escort" />
+			<subordinate job="sith_fighter_l_escort" />
+        </subordinates>
+      </job>
+	  
+	  <!-- Sith starfighter assault -->
+	  <job id="sith_starfighter_assault" name="{999840,613310}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="Patrol" default="true">
+            <param name="range" value="class.cluster" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[factionlogic, military]" size="ship_s" />
+        <quota galaxy="16" maxgalaxy="32" sector="2"/>
+		<location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[military, fighter]" size="ship_s" />
+          <loadout>
+            <level exact="1.0" />
+            <variation exact="0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+		<subordinates>
+			<subordinate job="sith_fighter_assault_escort" />
+        </subordinates>
+      </job>
+	  
+	  <!-- Sith Harrower assault -->
+	  <job id="sith_harrower_assault" name="{999840,613310}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="Patrol" default="true">
+            <param name="range" value="class.cluster" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[factionlogic, military, harrower]" size="ship_xl" />
+        <quota galaxy="5" maxgalaxy="10" cluster="1"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[military, harrower]" size="ship_xl" />
+          <loadout>
+            <level exact="1.0" />
+            <variation exact="0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+        <subordinates>
+			<subordinate job="sith_assault_escort_l" />
+			<subordinate job="sith_raider_assault_escort_m" />
+			<subordinate job="sith_fighter_xl_escort" />
+        </subordinates>
+      </job>
+
+	  <!-- Sith Harrower Inquisitor assault -->
+      <job id="sith_harrower_i_assault" name="{999840,613310}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="Patrol" default="true">
+            <param name="range" value="class.cluster" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[factionlogic, military, harrower_i]" size="ship_xl" />
+        <quota galaxy="5" maxgalaxy="10" cluster="1"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[military, harrower_i]" size="ship_xl" />
+          <loadout>
+            <level exact="1.0" />
+            <variation exact="0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+        <subordinates>
+			<subordinate job="sith_terminus_assault_escort_l" />
+			<subordinate job="sith_raider_assault_escort_m" />
+			<subordinate job="sith_fighter_xl_escort" />
+        </subordinates>
+      </job>
+	  
+	  <!-- Sith Harbor independent resupplier -->
+	  <job id="sith_resupplier" name="{20204,5501}">
+        <orders>
+          <order order="SupplyFleet" default="true" />
+        </orders>
+        <category faction="sith" tags="[resupplier]" size="ship_xl" />
+        <quota galaxy="1" maxgalaxy="2" cluster="1"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[resupplier]" size="ship_xl" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith Harbor Escort -->
+	  <job id="sith_resupplier_escort" name="{20204,5501}" startactive="false">
+        <orders>
+          <order order="SupplyFleet" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[resupplier]" size="ship_xl" />
+        <quota wing="1" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[resupplier]" size="ship_xl" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith Harrower, 2 Escort -->
+	  <job id="sith_harrower_escort_xl" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, harrower]" size="ship_xl" />
+        <quota wing="2" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, harrower]" size="ship_xl" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+        <subordinates>
+			<subordinate job="sith_assault_escort_l" assignment="attack"/>
+			<subordinate job="sith_raider_assault_escort_m" assignment="defence"/>
+			<subordinate job="sith_fighter_xl_escort" assignment="attack"/>
+        </subordinates>
+      </job>
+	  
+	  <!-- Sith Terminus, 2 Escorts -->
+	  <job id="sith_terminus_assault_escort_l" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, terminus_inqusition]" size="ship_l" />
+        <quota wing="2" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, terminus_inqusition]" size="ship_l" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+        <subordinates>
+			<subordinate job="sith_corvette_assault_escort_m" assignment="defence"/>
+			<subordinate job="sith_fighter_l_escort" assignment="attack"/>
+        </subordinates>
+      </job>
+	  
+	  <!-- Sith Terminus/Destroyer, 2 Escorts -->
+	  <job id="sith_assault_escort_l" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, large_escort]" size="ship_l" />
+        <quota wing="2" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military]" size="ship_l" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+        <subordinates>
+			<subordinate job="sith_corvette_assault_escort_m" assignment="defence"/>
+			<subordinate job="sith_fighter_assault_escort" assignment="attack"/>
+        </subordinates>
+      </job>
+	  
+	  <!-- Sith Terminus, 2 Escorts -->
+	  <job id="sith_terminus_expedition_escort_l" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, terminus_inqusition]" size="ship_l" />
+        <quota wing="2" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, terminus_inqusition]" size="ship_l" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+        <subordinates>
+			<subordinate job="sith_corvette_expedition_escort_m" assignment="defence"/>
+			<subordinate job="sith_fighter_l_escort" assignment="attack"/>
+        </subordinates>
+      </job>
+	  
+	  <!-- Sith Terminus/Destroyer, 2 Escorts -->
+	  <job id="sith_expedition_escort_l" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, large_escort]" size="ship_l" />
+        <quota wing="2" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military]" size="ship_l" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+        <subordinates>
+			<subordinate job="sith_corvette_expedition_escort_m" assignment="defence"/>
+			<subordinate job="sith_fighter_assault_escort" assignment="attack"/>
+        </subordinates>
+      </job>
+	  
+	  <!-- Sith M Mixed, 2 escorts -->
+	  <job id="sith_m_assault_escort" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, mixed]" size="ship_m" />
+        <quota wing="2" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, mixed]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	   <!-- Sith M Mixed, 3 escorts -->
+	  <job id="sith_m_expedition_escort" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, mixed]" size="ship_m" />
+        <quota wing="3" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, mixed]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith Raider, 2 escorts -->
+	  <job id="sith_raider_assault_escort_m" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, raider]" size="ship_m" />
+        <quota wing="2" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, raider]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith Raider, 3 escorts -->
+	  <job id="sith_raider_expedition_escort_m" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, raider]" size="ship_m" />
+        <quota wing="3" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, raider]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith Corvette, 2 escorts -->
+	  <job id="sith_corvette_assault_escort_m" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, corvete]" size="ship_m" />
+        <quota wing="2" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, corvette]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith Corvette, 3 escorts -->
+	  <job id="sith_corvette_expedition_escort_m" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[military, corvete]" size="ship_m" />
+        <quota wing="3" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, corvette]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith mixed fighters, 30 (max capacity is 60 for each Harrower type) escorts -->
+      <job id="sith_fighter_xl_escort" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <quota wing="30" />
+        <category faction="sith" tags="[military, fighter]" size="ship_s" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, fighter]" size="ship_s" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith mixed fighters, 8 (max capacity is 14/4 for the Terminus/Destroyer) escorts -->
+      <job id="sith_fighter_l_escort" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <quota wing="8" />
+        <category faction="sith" tags="[military, fighter]" size="ship_s" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, fighter]" size="ship_s" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith mixed fighters, 4 escorts -->
+      <job id="sith_fighter_assault_escort" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <quota wing="4" />
+        <category faction="sith" tags="[military, fighter]" size="ship_s" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, fighter]" size="ship_s" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith TIE Fury for L ships, 4 escorts -->
+      <job id="sith_fighter_fury_l_escort" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <quota wing="4" />
+        <category faction="sith" tags="[military, tiefury_l, fighter]" size="ship_s" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, tiefury, fighter]" size="ship_s" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith Supremacy for L ships, 8 escorts -->
+      <job id="sith_fighter_supremacy_l_escort" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <quota wing="8" />
+        <category faction="sith" tags="[military, supremacy_l, fighter]" size="ship_s" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, supremacy, fighter]" size="ship_s" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith TIE Fury for XL ships, 15 escorts -->
+      <job id="sith_fighter_fury_xl_escort" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <quota wing="15" />
+        <category faction="sith" tags="[military, tiefury_xl, fighter]" size="ship_s" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, tiefury, fighter]" size="ship_s" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <!-- Sith Supremacy for XL ships, 35 escorts -->
+      <job id="sith_fighter_supremacy_xl_escort" name="{7112025,10}" startactive="false">
+        <orders>
+          <order order="Escort" default="true">
+            <param name="formation" value="formationshape.triangle" />
+            <param name="overrideformationskill" value="true" />
+          </order>
+        </orders>
+        <quota wing="35" />
+        <category faction="sith" tags="[military, supremacy_xl, fighter]" size="ship_s" />
+        <location class="galaxy" macro="swi_galaxy_macro" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <modifiers subordinate="true" />
+        <ship>
+          <select faction="sith" tags="[military, supremacy, fighter]" size="ship_s" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	<!-- Economy jobs -->
+	  <job id="sith_construction_vessel_l_universal" name="{20204,5101}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="FindBuildTasks" default="true">
+            <param name="maxjumps" value="5" />
+          </order>
+        </orders>
+        <category faction="sith" tags="[factionlogic, builder]" size="ship_l" />
+        <quota galaxy="2" sector="1"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[builder]" size="ship_l" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <job id="sith_free_miner_m_liquid" name="{20204,5701}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="MiningRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="gases" />
+        <category faction="sith" tags="[factionlogic, freighter, miner]" size="ship_m" />
+        <quota galaxy="16" maxgalaxy="20" sector="4" />
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" regionbasket="gases" />	<!-- Was: *relation="self" comparison="exact"* -->
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[miner, liquid]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+          <cargo>
+            <wares multiple="true">
+              <fillpercent min="0" max="100" profile="inversebell" />
+            </wares>
+          </cargo>
+        </ship>
+      </job>
+	  
+	  <job id="sith_free_miner_m_mineral" name="{20204,5601}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="MiningRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="minerals" />
+        <category faction="sith" tags="[factionlogic, freighter, miner]" size="ship_m" />
+        <quota galaxy="16" maxgalaxy="20" sector="4" />
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" regionbasket="minerals" />	<!-- Was: *relation="self" comparison="exact"* -->
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[miner, solid]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+          <cargo>
+            <wares>
+              <fillpercent min="0" max="100" profile="inversebell" />
+            </wares>
+          </cargo>
+        </ship>
+      </job>
+	  
+	  <job id="sith_stationminer_m_liquid" name="{999840,614810}">
+        <modifiers rebuild="false" commandeerable="true"/>
+        <orders>
+          <order order="MiningRoutine" default="true">
+            <param name="maxbuy" value="5"/>
+          </order>
+        </orders>
+        <basket basket="gases"/>
+        <category faction="sith" tags="[stationminerliquid]" size="ship_m"/>
+        <quota galaxy="0" maxgalaxy="10"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="member" comparison="ge" matchextension="false"/>
+        <environment buildatshipyard="true"/>
+        <ship>
+          <select faction="sith" tags="[miner, liquid]" size="ship_m"/>
+          <loadout>
+            <level min="0.7" max="1.0"/>
+          </loadout>
+          <owner exact="sith" overridenpc="true"/>
+        </ship>
+      </job>
+	  
+	  <job id="sith_stationminer_l_liquid" name="{999840,614810}">
+        <modifiers rebuild="false" commandeerable="true"/>
+        <orders>
+          <order order="MiningRoutine" default="true">
+            <param name="maxbuy" value="5"/>
+          </order>
+        </orders>
+        <basket basket="gases"/>
+        <category faction="sith" tags="[stationminerliquid]" size="ship_l"/>
+        <quota galaxy="0" maxgalaxy="5"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="member" comparison="ge" matchextension="false"/>
+        <environment buildatshipyard="true"/>
+        <ship>
+          <select faction="sith" tags="[miner, liquid]" size="ship_l"/>
+          <loadout>
+            <level min="0.7" max="1.0"/>
+          </loadout>
+          <owner exact="sith" overridenpc="true"/>
+        </ship>
+      </job>
+
+      <job id="sith_stationminer_m_solid" name="{999840,614810}">
+        <modifiers rebuild="false" commandeerable="true"/>
+        <orders>
+          <order order="MiningRoutine" default="true">
+            <param name="maxbuy" value="5"/>
+          </order>
+        </orders>
+        <basket basket="minerals"/>
+        <category faction="sith" tags="[stationminersolid]" size="ship_m"/>
+        <quota galaxy="0" maxgalaxy="10"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="member" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true"/>
+        <ship>
+          <select faction="sith" tags="[miner, solid]" size="ship_m"/>
+          <loadout>
+            <level min="0.7" max="1.0"/>
+          </loadout>
+          <owner exact="sith" overridenpc="true"/>
+        </ship>
+      </job>
+	  
+	  <job id="sith_stationminer_l_solid" name="{999840,614810}">
+        <modifiers rebuild="false" commandeerable="true"/>
+        <orders>
+          <order order="MiningRoutine" default="true">
+            <param name="maxbuy" value="5"/>
+          </order>
+        </orders>
+        <basket basket="minerals"/>
+        <category faction="sith" tags="[stationminersolid]" size="ship_l"/>
+        <quota galaxy="0" maxgalaxy="5"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="member" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true"/>
+        <ship>
+          <select faction="sith" tags="[miner, solid]" size="ship_l"/>
+          <loadout>
+            <level min="0.7" max="1.0"/>
+          </loadout>
+          <owner exact="sith" overridenpc="true"/>
+        </ship>
+      </job>
+
+	<!-- Legacy Closed Loop jobs -->
+      <!--<job id="sith_equipment_trader_m" name="{20204,401}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="equipment" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="4" maxgalaxy="8" sector="1"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_construction_trader_l" name="{20204,401}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="construction_stations" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_l" />
+        <quota galaxy="10" maxgalaxy="16" sector="2"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_construction_trader_m" name="{20204,401}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="construction_stations" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="15" maxgalaxy="24" sector="3"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <job id="sith_refinedgas_trader_l" name="{20204,601}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="refined_gas" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_l" />
+        <quota galaxy="5" maxgalaxy="8" sector="1"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_refinedgas_trader_m" name="{20204,601}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="refined_gas" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="10" maxgalaxy="16" sector="2"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_refinedmineral_trader_l" name="{20204,601}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="refined_mineral" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_l" />
+        <quota galaxy="5" maxgalaxy="8" sector="1"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_refinedmineral_trader_m" name="{20204,601}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="refined_mineral" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="10" maxgalaxy="16" sector="2"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_tech_trader_l" name="{999840,613610}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="tech" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_l" />
+        <quota galaxy="5" maxgalaxy="8" sector="1"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_tech_trader_m" name="{999840,613610}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="tech" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="10" maxgalaxy="16" sector="2"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <job id="sith_energycell_trader_l_critical" name="{20204,201}">
+        <modifiers rebuild="true" commandeerable="false" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="energycells" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_l" />
+        <quota galaxy="18" maxgalaxy="30" sector="2"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_energycell_trader_m_critical" name="{20204,201}">
+        <modifiers rebuild="true" commandeerable="false" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="energycells" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="36" maxgalaxy="60" sector="4"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <job id="sith_generic_trader_l" name="{7112025,6}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="all_container" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_l" />
+        <quota galaxy="6" maxgalaxy="10" sector="1"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_generic_trader_m" name="{7112025,6}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="all_container" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="18" maxgalaxy="30" sector="2"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <job id="sith_food_trader_m" name="{999840,612510}">
+        <modifiers rebuild="true" commandeerable="false" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="food" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="24" maxgalaxy="30" sector="4"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  -->
+	  
+	  <job id="sith_supplies_trader_m" name="{999840,614310}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="shipsupplies" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="6" maxgalaxy="12" sector="1" />
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <job id="sith_energycell_trader_l_critical" name="{20204,201}">
+        <modifiers rebuild="true" commandeerable="false" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="energycells" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_l" />
+        <quota galaxy="18" maxgalaxy="30" sector="2"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_energycell_trader_m_critical" name="{20204,201}">
+        <modifiers rebuild="true" commandeerable="false" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="energycells" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="30" maxgalaxy="45" sector="3"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <job id="sith_generic_trader_l" name="{7112025,6}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="all_container" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_l" />
+        <quota galaxy="24" maxgalaxy="40" sector="4"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_generic_trader_m" name="{7112025,6}">
+        <modifiers rebuild="true" commandeerable="true" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="minbuy" value="0" />
+            <param name="maxbuy" value="5" />
+            <param name="minsell" value="0" />
+            <param name="maxsell" value="5" />
+          </order>
+        </orders>
+        <basket basket="all_container" />
+        <category faction="sith" tags="[factionlogic, freighter, trader]" size="ship_m" />
+        <quota galaxy="36" maxgalaxy="60" sector="6"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <job id="sith_stationtrader_m" name="{20204,801}">
+        <modifiers rebuild="false" commandeerable="false" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="maxbuy" value="5" />
+          </order>
+        </orders>
+        <basket basket="all_container" />
+        <category faction="sith" tags="[stationtrader]" size="ship_m" />
+        <quota galaxy="0" maxgalaxy="20" />
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_m" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+
+      <job id="sith_stationtrader_l" name="{20204,801}">
+        <modifiers rebuild="false" commandeerable="false" />
+        <orders>
+          <order order="TradeRoutine" default="true">
+            <param name="maxbuy" value="5" />
+          </order>
+        </orders>
+        <basket basket="all_container" />
+        <category faction="sith" tags="[stationtrader]" size="ship_l" />
+        <quota galaxy="0" maxgalaxy="10" />
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[trader, container]" size="ship_l" />
+          <loadout>
+            <level exact="1.0" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <job id="sith_free_compactor_l" name="{20204,10023}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="SalvageRoutine" default="true">
+            <param name="range" value="5" />
+          </order>
+        </orders>
+        <basket basket="rawscrap" />
+        <category faction="sith" tags="[factionlogic, compactor]" size="ship_l" />
+        <quota galaxy="1" maxgalaxy="2" sector="1"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[compactor]" size="ship_l" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	  <job id="sith_free_tug" name="{20204,5401}">
+        <modifiers commandeerable="true" />
+        <orders>
+          <order order="SalvageRoutine" default="true">
+            <param name="range" value="5" />
+          </order>
+        </orders>
+        <basket basket="rawscrap" />
+        <category faction="sith" tags="[factionlogic, tug]" size="ship_s" />
+        <quota galaxy="4" maxgalaxy="16" sector="2"/>
+        <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="ally" comparison="ge" matchextension="false" />
+        <environment buildatshipyard="true" />
+        <ship>
+          <select faction="sith" tags="[tug]" size="ship_s" />
+          <loadout>
+            <level exact="1" />
+          </loadout>
+          <owner exact="sith" overridenpc="true" />
+        </ship>
+      </job>
+	  
+	</add>
+
+</diff>

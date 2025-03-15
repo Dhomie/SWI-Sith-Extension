@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+	<!-- Add pre-spawned stations -->
+	<add sel="//god/stations">
+	<!-- Sith Empire -->
+		<!-- Unique production stations -->
+		<!--
+		<station id="sith_ziost_solar_power_plant" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="1" zone ="1"/>
+          </quotas>
+          <location class="zone" macro="swi_gate_korriban_zone_clusterziost_sector001_macro" matchextension="false" />
+          <station>
+            <select faction="sith" tags="[sith_solar_power_plant]" />
+            <loadout>
+              <level exact="1.0" />
+            </loadout>
+          </station>
+        </station>
+		
+		<station id="sith_ziost_durasteel_plant" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="1" zone ="1"/>
+          </quotas>
+          <location class="zone" macro="swi_zone002_clusterziost_sector001_macro" matchextension="false" />
+          <station>
+            <select faction="sith" tags="[sith_durasteel_plant]" />
+            <loadout>
+              <level exact="1.0" />
+            </loadout>
+          </station>
+        </station>
+		
+		<station id="sith_ziost_claytronics_plant" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="1" zone ="1"/>
+          </quotas>
+          <location class="zone" macro="swi_gate_thule_zone_clusterziost_sector001_macro" matchextension="false" />
+          <station>
+            <select faction="sith" tags="[sith_claytronics_plant]" />
+            <loadout>
+              <level exact="1.0" />
+            </loadout>
+          </station>
+        </station>
+		
+		<station id="sith_ziost_pharmaceutical_plant" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="1" zone ="1"/>
+          </quotas>
+          <location class="zone" macro="swi_gate_korriban_zone_clusterziost_sector001_macro" matchextension="false" />
+          <station>
+            <select faction="sith" tags="[sith_pharmaceutical_plant]" />
+            <loadout>
+              <level exact="1.0" />
+            </loadout>
+          </station>
+        </station>
+		 -->
+		
+		<!-- Generic stations -->
+		<station id="sith_equipmentdock_01" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="1" zone="1" />
+          </quotas>
+          <location class="zone" macro="swi_gate_stenos_zone_clusterkorriban_sector001_macro" matchextension="false" />
+          <station>
+            <select faction="sith" tags="[equipmentdock]" />
+            <loadout>
+              <level exact="1.0" />
+            </loadout>
+          </station>
+        </station>
+		
+		<station id="sith_defence_01" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="1" zone="1" />
+          </quotas>
+          <location class="sector" macro="swi_clusterziost_sector001_macro" matchextension="false" />
+          <station>
+            <select faction="sith" tags="[defence]" />
+            <loadout>
+              <level exact="1.0" />
+            </loadout>
+          </station>
+        </station>
+		
+		<station id="sith_defence_02" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="1" zone="1" />
+          </quotas>
+          <location class="sector" macro="swi_clusterdromundkaas_sector001_macro" matchextension="false" />
+          <station>
+            <select faction="sith" tags="[defence]" />
+            <loadout>
+              <level exact="1.0" />
+            </loadout>
+          </station>
+        </station>
+		
+		<station id="sith_defence_03" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="1" zone="1" />
+          </quotas>
+          <location class="sector" macro="swi_clusterkorriban_sector001_macro" matchextension="false" />
+          <station>
+            <select faction="sith" tags="[defence]" />
+            <loadout>
+              <level exact="1.0" />
+            </loadout>
+          </station>
+        </station>
+		
+		<station id="sith_defence_04" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="1" zone="1" />
+          </quotas>
+          <location class="sector" macro="swi_clusterthule_sector001_macro" matchextension="false" />
+          <station>
+            <select faction="sith" tags="[defence]" />
+            <loadout>
+              <level exact="1.0" />
+            </loadout>
+          </station>
+        </station>
+		
+	</add>
+	
+	<!-- Add stations for construction (AKA begin the economy) -->
+	<add sel="//god/products">
+		<!-- Sith Empire Economy -->
+		<!-- Self-sustaining, because they don't have any faction to trade with -->
+		
+		<!-- Begin required elements for Universal Production -->
+		<!--
+		<product id="sith_advancedcomposites" ware="advancedcomposites" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="12" sector="4" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="advancedcomposites" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_advancedelectronics" ware="advancedelectronics" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="18" sector="6" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="advancedelectronics" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_antimattercells" ware="antimattercells" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="6" sector="3"/> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <region ware="hydrogen" />
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="antimattercells" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_antimatterconverters" ware="antimatterconverters" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="6" sector="3" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="antimatterconverters" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_dronecomponents" ware="dronecomponents" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="8" sector="2" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="dronecomponents" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_engineparts" ware="engineparts" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="12" sector="4" />
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="engineparts" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_fieldcoils" ware="fieldcoils" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="16" sector="4" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="fieldcoils" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_missilecomponents" ware="missilecomponents" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="18" sector="6"/> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="missilecomponents" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_weaponcomponents" ware="weaponcomponents" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="20" sector="5" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="weaponcomponents" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_turretcomponents" ware="turretcomponents" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="20" sector="4" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="turretcomponents" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_scanningarrays" ware="scanningarrays" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="12" sector="4" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="scanningarrays" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_shieldcomponents" ware="shieldcomponents" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="20" sector="5"/> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="shieldcomponents" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_smartchips" ware="smartchips" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="16" sector="4" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="smartchips" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_rhydoniumcell" ware="rhydoniumcell" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="20" sector="4" />
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="rhydoniumcell" faction="sith" />
+          </module>
+        </product>
+		-->
+		<!-- End required elements for Universal Production -->
+		
+		<!-- Begin legacy Closed Loop economy -->
+		<!--
+		<product id="sith_shipsupplies" ware="shipsupplies" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="20" sector="5"/>
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.2" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="shipsupplies" faction="sith" />
+          </module>
+        </product>
+		
+        <product id="sith_foodrations" ware="foodrations" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="24" sector="4" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="foodrations" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_claytronics" ware="claytronics" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="36" sector="6" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="claytronics" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_quantumtubes" ware="quantumtubes" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="25" sector="5"/> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="quantumtubes" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_energycells" ware="energycells" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="60" sector="10"/>
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+            <sunlight min="1.5" max="8.0" />
+          </location>
+          <module>
+            <select ware="energycells" faction="sith" />
+          </module>
+        </product>
+		
+        <product id="sith_graphene" ware="graphene" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="20" sector="4"/> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <region ware="methane" />
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="graphene" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_hullparts" ware="hullparts" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="36" sector="6" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="hullparts" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_medicalsupplies" ware="medicalsupplies" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="30" sector="5" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="medicalsupplies" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_microchips" ware="microchips" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="24" sector="6" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="microchips" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_plasmaconductors" ware="plasmaconductors" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="20" sector ="4" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="plasmaconductors" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_refinedmetals" ware="refinedmetals" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="48" sector="12" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <region ware="ore" />
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="refinedmetals" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_siliconwafers" ware="siliconwafers" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="48" sector="12" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <region ware="silicon" />
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="siliconwafers" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_spices" ware="spices" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="18" sector="3" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="spices" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_superfluidcoolant" ware="superfluidcoolant" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="16" sector="4"/> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <region ware="helium" />
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="superfluidcoolant" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_water" ware="water" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="24" sector="6" /> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <region ware="ice" />
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="water" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_wheat" ware="wheat" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="24" sector="4"/> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="wheat" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_meat" ware="meat" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="24" sector="4"/> 
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="meat" faction="sith" />
+          </module>
+        </product>
+	-->
+		<!-- End legacy Closed Loop economy -->
+	
+	<!-- Dynamically spawned stations, the Terran economy model is very strong, so theoretically their prespawned Manufactorums should be enough to kickstart their eco -->
+	<!-- UPDATE (2025.03.15): After testing, they end up with a massive lack of Metallic Microlattice (Obsidian Composites), so I am re-enabling these -->
+		<!-- Begin Terran economy -->
+		
+		<product id="sith_shipsupplies" ware="shipsupplies" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="20" sector="5"/>
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="sith" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.2" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="shipsupplies" faction="sith" />
+          </module>
+        </product>
+
+        <product id="sith_energycells" ware="energycells" race="argon" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="60" sector="10"/>
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+            <sunlight min="1.5" max="8.0" />
+          </location>
+          <module>
+            <select ware="energycells" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_rhydoniumcell" ware="rhydoniumcell" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="24" sector="4" />
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="rhydoniumcell" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_computronicsubstrate" ware="computronicsubstrate" race="sith" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="36" sector="6"/>
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="computronicsubstrate" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_metallicmicrolattice" ware="metallicmicrolattice" race="sith" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="48" sector="8"/>
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="metallicmicrolattice" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_siliconcarbide" ware="siliconcarbide" race="sith" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="48" sector="8"/>
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="siliconcarbide" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_proteinpaste" ware="proteinpaste" race="sith" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="36" sector="6"/>
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="proteinpaste" faction="sith" />
+          </module>
+        </product>
+		
+		<product id="sith_mre" ware="terranmre" race="sith" owner="sith" type="factory">
+          <quotas>
+            <quota galaxy="36" sector="6"/>
+          </quotas>
+          <location class="galaxy" macro="swi_galaxy_macro" faction="[sith]" relation="self" comparison="exact" matchextension="false">
+            <economy min="0.1" max="1.0" maxbound="true" />
+          </location>
+          <module>
+            <select ware="terranmre" faction="sith" />
+          </module>
+        </product>
+		
+		<!-- End Terran economy -->
+	</add>
+</diff>

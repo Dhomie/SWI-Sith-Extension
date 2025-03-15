@@ -1,0 +1,2371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+<!-- SITH EMPIRE -->
+	<!-- The Sith have conveniently access to most basic stuff by default, the only thing they really lack are civilian ships for maintaining an economy -->
+	<!-- Said stuff are mostly Imperial, so let's stick to using Imperial civilian ships -->
+	
+	<!-- Additional Sith wares -->
+	<add sel="/wares">
+		<!-- Gage-class Transport, based on the Terminus hull -->
+		<ware id="gage" name="{7112025,2}" description="{7112025,3}" group="ships_sw" transport="ship" volume="1" tags="ship">
+			<price min="10686156" average="13603125" max="17420094" />
+			<production time="1500" amount="1" method="default" name="{20206,101}">
+				<primary>
+					<ware ware="energycells" amount="15000" />
+					<ware ware="hullparts" amount="3600" />
+					<ware ware="rhydoniumcell" amount="120" />
+					<ware ware="shipsupplies" amount="25" />
+				</primary>
+			</production>
+			<!-- CL recipe -->
+			<production time="1500" amount="1" method="closedloop" name="{20206,1201}">
+				<primary>
+					<ware ware="claytronics" amount="1200" />
+					<ware ware="energycells" amount="45000" />
+					<ware ware="hullparts" amount="3200" />
+					<ware ware="shipsupplies" amount="25" />
+				</primary>
+			</production>
+			<!-- Terran recipe -->
+			<production time="1500" amount="1" method="terran" name="{999840,590070}">
+				<primary>
+					<ware ware="energycells" amount="14000" />
+					<ware ware="computronicsubstrate" amount="120" />
+					<ware ware="metallicmicrolattice" amount="1120" />
+					<ware ware="rhydoniumcell" amount="120" />
+					<ware ware="shipsupplies" amount="25" />
+				</primary>
+			</production>
+			<component ref="gage_macro" amount="1" />
+			<restriction licence="capitalship" />
+			<owner faction="sith" />
+		</ware>
+		
+		<!-- Sith habitation modules -->
+		<ware id="hab_sith_l_01" name="{7112025,14}" description="{7112025,14}" transport="container" volume="1" tags="module">
+			<price min="10627714" average="12562016" max="16496318" />
+			<production time="450" amount="1" method="terran" name="{999840,590070}">
+				<primary>
+					<ware ware="computronicsubstrate" amount="100" />
+					<ware ware="energycells" amount="850" />
+					<ware ware="siliconcarbide" amount="180" />
+				</primary>
+			</production>
+			<research time="10">
+				<research>
+					<ware ware="research_module_habitation" />
+				</research>
+			</research>
+			<component ref="hab_sith_l_01_macro" amount="1" />
+			<restriction licence="station_gen_advanced" />
+			<owner faction="sith" />
+		</ware>
+		
+		<ware id="hab_sith_m_01" name="{7112025,15}" description="{7112025,15}" transport="container" volume="1" tags="module">
+			<price min="10627714" average="12562016" max="16496318" />
+			<production time="300" amount="1" method="terran" name="{999840,590070}">
+				<primary>
+					<ware ware="computronicsubstrate" amount="70" />
+					<ware ware="energycells" amount="480" />
+					<ware ware="siliconcarbide" amount="150" />
+				</primary>
+			</production>
+			<research time="1">
+				<research>
+					<ware ware="research_module_habitation" />
+				</research>
+			</research>
+			<component ref="hab_sith_m_01_macro" amount="1" />
+			<restriction licence="station_gen_advanced" />
+			<owner faction="sith" />
+		</ware>
+		
+		<ware id="hab_sith_s_01" name="{7112025,16}" description="{7112025,16}" transport="container" volume="1" tags="module">
+			<price min="10627714" average="12562016" max="16496318" />
+			<production time="150" amount="1" method="terran" name="{999840,590070}">
+				<primary>
+					<ware ware="computronicsubstrate" amount="45" />
+					<ware ware="energycells" amount="350" />
+					<ware ware="siliconcarbide" amount="90" />
+				</primary>
+			</production>
+			<research time="1">
+				<research>
+					<ware ware="research_module_habitation" />
+				</research>
+			</research>
+			<component ref="hab_sith_s_01_macro" amount="1" />
+			<restriction licence="station_gen_advanced" />
+			<owner faction="sith" />
+		</ware>
+	
+  </add>
+  
+  <!-- Terran modules -->
+  <!--
+  <add sel="/wares">
+	<ware id="module_ter_build_dockarea_m_01" name="{20104,61901}" description="{20104,61902}" transport="container" volume="1" tags="module">
+      <price min="92680858" average="109036303" max="125391749" />
+      <production time="1298" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="claytronics" amount="900" />
+		  <ware ware="energycells" amount="10000" />
+		  <ware ware="hullparts" amount="1800" />
+        </primary>
+      </production>
+      <research time="10">
+        <research>
+          <ware ware="research_module_build" />
+        </research>
+      </research>
+      <component ref="buildmodule_ter_ships_m_dockarea_01_macro" />
+      <restriction licence="station_equip_sm" />
+      <owner faction="sith" />
+    </ware>
+	<ware id="module_ter_def_disc_01" name="{20104,95101}" description="{20104,95102}" transport="container" volume="1" tags="module">
+      <price min="1231845" average="1449230" max="1666614" />
+      <production time="822" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="claytronics" amount="50" />
+		  <ware ware="energycells" amount="1000" />
+		  <ware ware="hullparts" amount="100" />
+        </primary>
+      </production>
+      <research time="10">
+        <research>
+          <ware ware="research_module_defence" />
+        </research>
+      </research>
+      <component ref="defence_ter_disc_01_macro" />
+      <restriction licence="station_gen_intermediate" />
+      <owner faction="sith" />
+    </ware>
+    <ware id="module_ter_def_tube_01" name="{20104,95201}" description="{20104,95202}" transport="container" volume="1" tags="module">
+      <price min="866932" average="1019921" max="1172909" />
+      <production time="581" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="claytronics" amount="35" />
+		  <ware ware="energycells" amount="600" />
+		  <ware ware="hullparts" amount="70" />
+        </primary>
+      </production>
+      <research time="10">
+        <research>
+          <ware ware="research_module_defence" />
+        </research>
+      </research>
+      <component ref="defence_ter_tube_01_macro" />
+      <restriction licence="station_gen_intermediate" />
+      <owner faction="sith" />
+    </ware>
+    <ware id="module_ter_equip_dockarea_m_01" name="{20104,61601}" description="{20104,61602}" transport="container" volume="1" tags="module">
+      <price min="32174490" average="37852341" max="43530192" />
+      <production time="650" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="claytronics" amount="700" />
+		  <ware ware="energycells" amount="7500" />
+		  <ware ware="hullparts" amount="1200" />
+        </primary>
+      </production>
+      <research time="10">
+        <research>
+          <ware ware="research_module_build" />
+        </research>
+      </research>
+      <component ref="buildmodule_ter_equip_m_dockarea_01_macro" />
+      <restriction licence="station_equip_sm" />
+      <owner faction="sith" />
+    </ware>
+	<ware id="module_ter_pier_tradestation_01" name="{20104,74001}" description="{20104,74002}" transport="container" volume="1" tags="module">
+      <price min="2297462" average="2702896" max="3108330" />
+      <production time="1225" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="claytronics" amount="200" />
+		  <ware ware="energycells" amount="3800" />
+		  <ware ware="hullparts" amount="400" />
+        </primary>
+      </production>
+      <research time="10">
+        <research>
+          <ware ware="research_module_dock" />
+        </research>
+      </research>
+      <component ref="pier_ter_tradestation_01_macro" />
+      <restriction licence="station_gen_basic" />
+      <owner faction="sith" />
+    </ware>
+	<ware id="module_ter_stor_container_m_tradestation" name="{20104,91701}" description="{20104,91702}" transport="container" volume="1" tags="module">
+      <price min="307765" average="362076" max="416387" />
+      <production time="520" amount="1" method="default" name="{20206,901}">
+        <primary>
+          <ware ware="claytronics" amount="20" />
+		  <ware ware="energycells" amount="500" />
+		  <ware ware="hullparts" amount="50" />
+        </primary>
+      </production>
+      <research time="10">
+        <research>
+          <ware ware="research_module_storage" />
+        </research>
+      </research>
+      <component ref="storage_ter_m_container_tradestation_01_macro" />
+      <restriction licence="station_gen_basic" />
+      <owner faction="sith" />
+    </ware>
+  </add>
+  -->
+	
+	<!-- Turrets -->
+	<add sel="/wares/ware[@id='turret_gen_m_scrapbeam_sw']">
+		<owner faction="sith" />
+	</add>
+	
+	<!-- Modules -->
+	<add sel="/wares/ware[@id='module_gen_prod_advancedcomposites_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_antimattercells_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_antimatterconverters_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_dronecomponents_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_energycells_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_engineparts_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_fieldcoils_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_graphene_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_microchips_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_missilecomponents_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_plasmaconductors_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_quantumtubes_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_refinedmetals_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_scanningarrays_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_shieldcomponents_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_siliconwafers_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_smartchips_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_spices_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_superfluidcoolant_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_turretcomponents_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_water_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_weaponcomponents_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_prod_scrap_recycler']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_gen_proc_scrapworks']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_imp_equip_dockarea_m_01_new']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_imp_build_dockarea_m_01_new']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_storage_liquid_imperial_tradestation']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_freeport_dock_ms']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_imperial_tradestation_dock_ms']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='module_imperial_tradestation_habitat']">
+		<owner faction="sith" />
+	</add>
+	<!-- Egosoft cursed this module, since not having it apparently breaks the UI, the blueprint sales menu -->
+	<add sel="//wares/ware[@id='module_arg_radar_dish_01']">
+		<owner faction="sith" />
+	</add>
+	<!-- Engines -->
+	<add sel="/wares/ware[@id='engine_bff']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='engine_l_imp_acc']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='engine_hapan_m']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='engine_l_commerce']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='engine_vigil']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='engine_lancerfrigate']">
+		<owner faction="sith" />
+	</add>
+	
+	<!-- Shields -->
+	<!-- These are mostly the best, with the Kuat one having more regen AND shield capacity than most Large Heavy shields-->
+	<add sel="/wares/ware[@id='shield_xll_quitadbluefield']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='shield_lh_kuat900']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='shield_light_l_imp']">
+		<owner faction="sith" />
+	</add>
+	
+	
+	<!-- Military Ships -->
+	<add sel="/wares/ware[@id='ship_gen_resupplier_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='hapan_m']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='raider']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='vigilfinal']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='customs_corvette']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='lancerfrigate']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='imp_light_cruiser']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='tie_fighter_van']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='tie_interceptor_rg']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='quasar_imp']">
+		<owner faction="sith" />
+	</add>
+	
+	<!-- Civilian Ships -->
+	<add sel="/wares/ware[@id='css1']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='lambda_shuttle']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='bff_01']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='impgozanti_at']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='berea_shuttle']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='berea_shuttle_gas']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='heraklon_solid']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='heraklon_liquid']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='acclamator1']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='neutronstar_builder']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='quad_jumper']">
+		<owner faction="sith" />
+	</add>
+	<add sel="/wares/ware[@id='cor_scrapper']">
+		<owner faction="sith" />
+	</add>
+	
+	
+<!-- BEGIN TERRAN RECIPE SECTION -->
+<!-- SWI 0.85 repurposed the Terran build method into the Sith one, and has recipes for "most" Imperial, and Clone Wars era Clone (Kaminoan) wares -->
+<!-- Wares that don't have them are handled below -->
+<!-- The "legacy" Closed Loop recipes are updated and also kept, in case we ever need to use them again, no need to undo it -->
+
+	<!-- Recipes for ships missing them -->
+	
+	<!-- Ware conversion is roughly: 1 Hull Parts == 0.034 Computronic Substrate + 0.3136 Metallic Microlattice -->
+	<!-- For practicality, we're going to use the following formula: 1 Hull Parts = 0.035 Computronic Substrate + 0.3135 Metallic Microlattice -->
+	<add sel="/wares/ware[@id='hapan_m']">
+      <production time="1200" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+			<!-- 1000 Hull Parts -->
+			<ware ware="energycells" amount="3400" />
+			<ware ware="computronicsubstrate" amount="35" />
+			<ware ware="metallicmicrolattice" amount="314" /> 	<!-- 313.5 -->
+			<ware ware="shipsupplies" amount="20" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='css1']">
+      <production time="360" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+			<!-- 420 Hull Parts -->
+			<ware ware="energycells" amount="700" />
+			<ware ware="computronicsubstrate" amount="15" />	<!-- 14.7 -->
+			<ware ware="metallicmicrolattice" amount="132" />	<!-- 131.67 -->
+			<ware ware="shipsupplies" amount="10" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='bff_01']">
+      <production time="360" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+			<!-- 400 Hull Parts -->
+			<ware ware="energycells" amount="400" />
+			<ware ware="computronicsubstrate" amount="14" />
+			<ware ware="metallicmicrolattice" amount="125" />	<!-- 125.4 -->
+			<ware ware="shipsupplies" amount="10" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='quad_jumper']">
+      <production time="100" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+			<!-- 120 Hull Parts -->
+			<ware ware="energycells" amount="250" />
+			<ware ware="computronicsubstrate" amount="4" />		<!-- 4.2 -->
+			<ware ware="metallicmicrolattice" amount="38" />	<!-- 37.62 -->
+        </primary>
+      </production>
+    </add>
+	
+	<!-- Recipes for turrets missing them -->
+	<!-- Values are all over the place, so we'll use reasonable costs -->
+	<add sel="/wares/ware[@id='turret_gen_m_scrapbeam_sw']">
+      <production time="1" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+          <ware ware="energycells" amount="200" />
+		  <ware ware="computronicsubstrate" amount="2" />
+          <ware ware="metallicmicrolattice" amount="25" />
+          <ware ware="siliconcarbide" amount="15" />
+        </primary>
+      </production>
+    </add>
+	
+	<!-- Recipes for engines missing them -->
+	<add sel="/wares/ware[@id='engine_bff']">
+      <production time="1" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+          <ware ware="energycells" amount="150" />
+		  <ware ware="computronicsubstrate" amount="15" />
+          <ware ware="metallicmicrolattice" amount="150" />
+          <ware ware="siliconcarbide" amount="60" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_hapan_m']">
+      <production time="1" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+          <ware ware="energycells" amount="180" />
+		  <ware ware="computronicsubstrate" amount="10" />
+          <ware ware="metallicmicrolattice" amount="180" />
+          <ware ware="siliconcarbide" amount="65" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_l_commerce']">
+      <production time="1" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+          <ware ware="energycells" amount="250" />
+		  <ware ware="computronicsubstrate" amount="50" />
+          <ware ware="metallicmicrolattice" amount="145" />
+          <ware ware="siliconcarbide" amount="45" />
+        </primary>
+      </production>
+    </add>
+	
+	
+	<!-- Recipes for shields missing them -->
+	<add sel="/wares/ware[@id='shield_xll_quitadbluefield']">
+      <production time="1" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+          <ware ware="energycells" amount="650" />
+		  <ware ware="computronicsubstrate" amount="20" />
+          <ware ware="metallicmicrolattice" amount="210" />
+          <ware ware="siliconcarbide" amount="60" />
+        </primary>
+      </production>
+    </add>
+	
+	<!-- Recipes for modules missing them -->
+	<!-- Superior Sith building techniques result in faster build times, and better costs (AKA I'm too lazy to look up their original numbers times so I'm gonna use random numbers) -->
+	<add sel="/wares/ware[@id='module_gen_prod_energycells_01']">
+      <production time="150" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+          <ware ware="computronicsubstrate" amount="350" />
+          <ware ware="energycells" amount="2500" />
+          <ware ware="siliconcarbide" amount="1650" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='module_gen_prod_scrap_recycler']">
+      <production time="210" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+          <ware ware="energycells" amount="1000" />
+		  <ware ware="computronicsubstrate" amount="100" />
+          <ware ware="metallicmicrolattice" amount="300" />
+          <ware ware="siliconcarbide" amount="250" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='module_gen_proc_scrapworks']">
+      <production time="210" amount="1" method="terran" name="{999840,590070}">
+        <primary>
+          <ware ware="energycells" amount="2500" />
+		  <ware ware="computronicsubstrate" amount="200" />
+          <ware ware="metallicmicrolattice" amount="500" />
+          <ware ware="siliconcarbide" amount="450" />
+        </primary>
+      </production>
+    </add>
+<!-- BEGIN CLOSED LOOP RECIPE SECTION -->
+<!-- The "legacy" Closed Loop recipes are updated and also kept, in case we ever need to use them again, no need to undo it -->
+<!-- Remove recipes per ware type, then add our own CL recipe, for compability with the Closed Loop Reborn mod -->
+<!-- NOTE: M and S ships have no need for CL recipes -->
+
+	<!-- Misc. but essential wares -->
+	<remove sel="/wares/ware[@id='missile_concussion_light']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_concussion_light_swarm']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_concussion_medium']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_concussion_heavy']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_proton_light']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_proton_medium']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_proton_heavy']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_ion_light']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_ion_medium']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_rocket_light']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_rocket_medium']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_boron_cruise']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='missile_bomb_proton']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='countermeasure_flares_01']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='thruster_gen_s_allround_01_mk2']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='thruster_gen_s_allround_01_mk3']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='thruster_gen_s_combat_01_mk2']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='thruster_gen_s_combat_01_mk3']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='thruster_gen_l_allround_01_mk2']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='thruster_gen_l_allround_01_mk3']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='thruster_gen_xl_allround_01_mk2']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='thruster_gen_xl_allround_01_mk3']/production[@method='closedloop']" />
+	
+	<!-- CL Recipes -->
+	<add sel="/wares/ware[@id='missile_concussion_light']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="230" />
+          <ware ware="hullparts" amount="7" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_concussion_light_swarm']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="700" />
+          <ware ware="hullparts" amount="22" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_concussion_medium']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="600" />
+          <ware ware="hullparts" amount="19" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_concussion_heavy']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="750" />
+          <ware ware="hullparts" amount="23" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_proton_light']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="580" />
+          <ware ware="hullparts" amount="19" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_proton_medium']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="1200" />
+          <ware ware="hullparts" amount="40" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_proton_heavy']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="800" />
+          <ware ware="hullparts" amount="100" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_ion_light']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="775" />
+          <ware ware="hullparts" amount="25" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_ion_medium']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="1200" />
+          <ware ware="hullparts" amount="38" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_rocket_light']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="175" />
+          <ware ware="hullparts" amount="5" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_rocket_medium']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="300" />
+          <ware ware="hullparts" amount="9" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_boron_cruise']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="1350" />
+          <ware ware="hullparts" amount="173" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='missile_bomb_proton']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="2000" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='countermeasure_flares_01']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="40" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='thruster_gen_s_allround_01_mk2']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="3" />
+          <ware ware="energycells" amount="25" />
+          <ware ware="hullparts" amount="10" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='thruster_gen_s_allround_01_mk3']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="8" />
+          <ware ware="energycells" amount="25" />
+          <ware ware="hullparts" amount="20" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='thruster_gen_s_combat_01_mk2']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="25" />
+          <ware ware="hullparts" amount="3" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='thruster_gen_s_combat_01_mk3']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="6" />
+          <ware ware="energycells" amount="50" />
+          <ware ware="hullparts" amount="15" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='thruster_gen_l_allround_01_mk2']">
+      <production time="20" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="60" />
+          <ware ware="energycells" amount="1000" />
+          <ware ware="hullparts" amount="50" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='thruster_gen_l_allround_01_mk3']">
+      <production time="20" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="145" />
+          <ware ware="energycells" amount="2500" />
+          <ware ware="hullparts" amount="150" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='thruster_gen_xl_allround_01_mk2']">
+      <production time="30" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="130" />
+          <ware ware="energycells" amount="1000" />
+          <ware ware="hullparts" amount="100" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='thruster_gen_xl_allround_01_mk3']">
+      <production time="30" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="275" />
+          <ware ware="energycells" amount="2000" />
+          <ware ware="hullparts" amount="250" />
+        </primary>
+      </production>
+    </add>
+	
+	<!-- Laser Towers -->
+	<add sel="/wares/ware[@id='ship_gen_s_lasertower_01_a']">
+      <production time="30" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="700" />
+          <ware ware="hullparts" amount="7" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='ship_gen_xs_lasertower_01_a']">
+      <production time="30" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="500" />
+          <ware ware="hullparts" amount="5" />
+        </primary>
+      </production>
+    </add>
+	
+	<!-- Ships -->
+	<remove sel="/wares/ware[@id='heraklon_solid']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='heraklon_liquid']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='acclamator1']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='neutronstar_builder']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='cor_scrapper']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='harrower']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='harrower_i']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='terminus']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='ship_gen_resupplier_01']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='vigilfinal']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='lancerfrigate']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='imp_light_cruiser']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='quasar_imp']/production[@method='closedloop']" />
+	
+	<!-- CL Recipes -->
+	<add sel="/wares/ware[@id='heraklon_solid']">
+      <production time="1000" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="250" />
+          <ware ware="energycells" amount="20000" />
+          <ware ware="hullparts" amount="675" />
+          <ware ware="shipsupplies" amount="20" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='heraklon_liquid']">
+      <production time="1000" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="250" />
+          <ware ware="energycells" amount="20000" />
+          <ware ware="hullparts" amount="675" />
+          <ware ware="shipsupplies" amount="20" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='acclamator1']">
+      <production time="1200" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="320" />
+          <ware ware="energycells" amount="60000" />
+          <ware ware="hullparts" amount="2700" />
+          <ware ware="shipsupplies" amount="60" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='neutronstar_builder']">
+      <production time="1000" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="320" />
+          <ware ware="energycells" amount="75000" />
+          <ware ware="hullparts" amount="2100" />
+          <ware ware="shipsupplies" amount="40" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='cor_scrapper']">
+      <production time="1200" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="250" />
+          <ware ware="energycells" amount="50000" />
+          <ware ware="hullparts" amount="1000" />
+          <ware ware="shipsupplies" amount="20" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='harrower']">
+      <production time="3400" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="3750" />
+          <ware ware="energycells" amount="250000" />
+          <ware ware="hullparts" amount="18750" />
+		  <ware ware="shipsupplies" amount="220" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='harrower_i']">
+      <production time="3400" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5000" />
+          <ware ware="energycells" amount="400000" />
+          <ware ware="hullparts" amount="28000" />
+		  <ware ware="shipsupplies" amount="240" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='terminus']">
+      <production time="1600" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1250" />
+          <ware ware="energycells" amount="60000" />
+          <ware ware="hullparts" amount="3400" />
+		  <ware ware="shipsupplies" amount="40" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='ship_gen_resupplier_01']">
+      <production time="1550" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1110" />
+          <ware ware="energycells" amount="100000" />
+          <ware ware="hullparts" amount="3400" />
+          <ware ware="shipsupplies" amount="200" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='vigilfinal']">
+      <production time="1000" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="200" />
+          <ware ware="energycells" amount="35000" />
+          <ware ware="hullparts" amount="1600" />
+          <ware ware="shipsupplies" amount="30" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='lancerfrigate']">
+      <production time="1000" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="350" />
+          <ware ware="energycells" amount="40000" />
+          <ware ware="hullparts" amount="1750" />
+          <ware ware="shipsupplies" amount="40" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='imp_light_cruiser']">
+      <production time="1200" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="500" />
+          <ware ware="energycells" amount="45000" />
+          <ware ware="hullparts" amount="1770" />
+          <ware ware="shipsupplies" amount="40" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='quasar_imp']">
+      <production time="1200" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="320" />
+          <ware ware="energycells" amount="30000" />
+          <ware ware="hullparts" amount="1700" />
+          <ware ware="shipsupplies" amount="60" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='sith_freighter']">
+      <production time="1000" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="400" />
+          <ware ware="energycells" amount="24000" />
+          <ware ware="hullparts" amount="1300" />
+          <ware ware="shipsupplies" amount="20" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='sith_destroyer']">
+      <production time="1800" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="900" />
+          <ware ware="energycells" amount="40000" />
+          <ware ware="hullparts" amount="6500" />
+          <ware ware="shipsupplies" amount="70" />
+        </primary>
+      </production>
+    </add>
+	
+	<!-- Weapons -->
+	<remove sel="/wares/ware[@id='weapon_mining_drill']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_blaster_s_laser']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_ls1_s_laser']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_ls7_s_laser']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_ls9_s_laser']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_krupx_s_guided']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_heavyprotonlauncher']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_mediumconclauncher']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_protonlauncher']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_mg2launcher']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_mg1launcher']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_hm6launcher']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_mg9launcher']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_flexlauncher']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_bomblauncher']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_ts5protonlauncher']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_xx3_m_laser']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_ga60_m_laser']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='weapon_nk3_s_laser']/production[@method='closedloop']" />
+	
+	<!-- CL Recipes -->
+	<add sel="/wares/ware[@id='weapon_mining_drill']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="10" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_blaster_s_laser']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="50" />
+          <ware ware="hullparts" amount="2" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='weapon_ls1_s_laser']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="200" />
+          <ware ware="hullparts" amount="6" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_ls7_s_laser']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="3" />
+          <ware ware="energycells" amount="200" />
+          <ware ware="hullparts" amount="8" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_ls9_s_laser']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5" />
+          <ware ware="energycells" amount="440" />
+          <ware ware="hullparts" amount="18" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='weapon_krupx_s_guided']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="3" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='weapon_heavyprotonlauncher']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="750" />
+          <ware ware="hullparts" amount="60" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_mediumconclauncher']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="750" />
+          <ware ware="hullparts" amount="60" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_protonlauncher']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="30" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='weapon_mg2launcher']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="1000" />
+          <ware ware="hullparts" amount="10" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_mg1launcher']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="1000" />
+          <ware ware="hullparts" amount="10" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_hm6launcher']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="12" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_mg9launcher']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="15" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_flexlauncher']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="30" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_bomblauncher']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="15" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_ts5protonlauncher']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="15" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='weapon_xx3_m_laser']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="21" />
+          <ware ware="energycells" amount="810" />
+          <ware ware="hullparts" amount="81" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='weapon_ga60_m_laser']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="7" />
+          <ware ware="energycells" amount="130" />
+          <ware ware="hullparts" amount="17" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='weapon_nk3_s_laser']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="6" />
+          <ware ware="energycells" amount="610" />
+          <ware ware="hullparts" amount="12" />
+        </primary>
+      </production>
+    </add>
+	
+	<!-- Turrets -->
+	<remove sel="/wares/ware[@id='turret_m_sw_mining_01']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_sw_mining_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_ag1g_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_ag2g_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_ag2g_green_lancer']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_h9single_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_h9single_green_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_h9dual_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_h9dual_green_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_xx9single_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_xx9dual_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_l_triple_turbolaser_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_l_octuple_turbolaser_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_l_station_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_l_doublelr_turbolaser_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_l_doublelr_turbolaser546_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_l_double_turbolaser_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_l_quadkdd_turbolaser_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_ion_nk7']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_ion_nk7_ball']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_l_double_ionsv200']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_llaser_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_llaser_green_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_duallaser_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_duallaser_green_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_quadlaser_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_quadlaser_green_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_quadlaserlancer_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_quadlaserlancer_green_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_ltbdual_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_ltbdual_green_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_ltbquad_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_ltbquad_green_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_mtbdualven_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_mtbdual_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_flak_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_mtbquad_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_mtbsingle_green']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_s_lambda']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_vcx100_shorttractor']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_tractor_heavy']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_gravity_well']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_conctube']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_conctubelight']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_torptube']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_m_borontube']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='turret_gen_m_scrapbeam_sw']/production[@method='closedloop']" />
+	
+	<!-- CL Recipes -->
+	<add sel="/wares/ware[@id='turret_m_sw_mining_01']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="50" />
+          <ware ware="hullparts" amount="5" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_sw_mining_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="50" />
+          <ware ware="hullparts" amount="5" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_m_ag1g_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="15" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_ag2g_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="270" />
+          <ware ware="hullparts" amount="17" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_m_ag2g_green_lancer']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="280" />
+          <ware ware="hullparts" amount="17" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_h9single_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="3" />
+          <ware ware="energycells" amount="330" />
+          <ware ware="hullparts" amount="23" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_h9single_green_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="3" />
+          <ware ware="energycells" amount="330" />
+          <ware ware="hullparts" amount="23" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_h9dual_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="730" />
+          <ware ware="hullparts" amount="63" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_h9dual_green_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="730" />
+          <ware ware="hullparts" amount="63" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_xx9single_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="250" />
+          <ware ware="hullparts" amount="6" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_xx9dual_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="7" />
+          <ware ware="energycells" amount="570" />
+          <ware ware="hullparts" amount="17" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_l_triple_turbolaser_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="20" />
+          <ware ware="energycells" amount="3100" />
+          <ware ware="hullparts" amount="45" />
+        </primary>
+      </production>
+	</add>
+    <add sel="/wares/ware[@id='turret_l_octuple_turbolaser_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="20" />
+          <ware ware="energycells" amount="3200" />
+          <ware ware="hullparts" amount="120" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_l_station_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="36" />
+          <ware ware="energycells" amount="3200" />
+          <ware ware="hullparts" amount="80" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_l_doublelr_turbolaser_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="18" />
+          <ware ware="energycells" amount="2222" />
+          <ware ware="hullparts" amount="33" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_l_doublelr_turbolaser_blue']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="18" />
+          <ware ware="energycells" amount="2222" />
+          <ware ware="hullparts" amount="33" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_l_doublelr_turbolaser546_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="18" />
+          <ware ware="energycells" amount="2222" />
+          <ware ware="hullparts" amount="33" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_l_double_turbolaser_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="15" />
+          <ware ware="energycells" amount="2500" />
+          <ware ware="hullparts" amount="35" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_l_quadkdd_turbolaser_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="17" />
+          <ware ware="energycells" amount="2750" />
+          <ware ware="hullparts" amount="37" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_ion_nk7']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5" />
+          <ware ware="energycells" amount="270" />
+          <ware ware="hullparts" amount="23" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_ion_nk5']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="270" />
+          <ware ware="hullparts" amount="23" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_ion_nk7_ball']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5" />
+          <ware ware="energycells" amount="270" />
+          <ware ware="hullparts" amount="23" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_l_double_ionsv200']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="13" />
+          <ware ware="energycells" amount="1570" />
+          <ware ware="hullparts" amount="80" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_llaser_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="160" />
+          <ware ware="hullparts" amount="12" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_llaser_green_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="160" />
+          <ware ware="hullparts" amount="12" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_duallaser_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="190" />
+          <ware ware="hullparts" amount="9" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_duallaser_green_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="190" />
+          <ware ware="hullparts" amount="9" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_quadlaser_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="240" />
+          <ware ware="hullparts" amount="14" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_quadlaser_blue']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="240" />
+          <ware ware="hullparts" amount="14" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_quadlaser_green_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="240" />
+          <ware ware="hullparts" amount="14" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_quadlaser_blue_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="240" />
+          <ware ware="hullparts" amount="14" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_quadlaserlancer_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="3" />
+          <ware ware="energycells" amount="320" />
+          <ware ware="hullparts" amount="22" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_quadlaserlancer_green_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="3" />
+          <ware ware="energycells" amount="320" />
+          <ware ware="hullparts" amount="22" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_ltbdual_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="420" />
+          <ware ware="hullparts" amount="32" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_ltbdual_blue']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="420" />
+          <ware ware="hullparts" amount="32" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_ltbdual_green_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="420" />
+          <ware ware="hullparts" amount="32" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_ltbdual_blue_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="420" />
+          <ware ware="hullparts" amount="32" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_ltbquad_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5" />
+          <ware ware="energycells" amount="500" />
+          <ware ware="hullparts" amount="40" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_ltbquad_green_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5" />
+          <ware ware="energycells" amount="500" />
+          <ware ware="hullparts" amount="40" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_mtbdualven_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="15" />
+          <ware ware="energycells" amount="1800" />
+          <ware ware="hullparts" amount="30" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_mtbdual_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="7" />
+          <ware ware="energycells" amount="780" />
+          <ware ware="hullparts" amount="20" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_flak_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="3" />
+          <ware ware="energycells" amount="500" />
+          <ware ware="hullparts" amount="10" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_mtbquad_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="6" />
+          <ware ware="energycells" amount="600" />
+          <ware ware="hullparts" amount="20" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_mtbsingle_green']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="8" />
+          <ware ware="energycells" amount="570" />
+          <ware ware="hullparts" amount="20" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_s_lambda']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="200" />
+          <ware ware="hullparts" amount="10" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_vcx100_shorttractor']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="15" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_tractor_heavy']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="40" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_gravity_well']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="25" />
+          <ware ware="energycells" amount="2000" />
+          <ware ware="hullparts" amount="5" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_conctube']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="4" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_conctubelight']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="4" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='turret_m_torptube']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="4" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_m_borontube']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="150" />
+          <ware ware="hullparts" amount="5" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_gen_m_scrapbeam_sw']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="1" />
+          <ware ware="energycells" amount="750" />
+          <ware ware="hullparts" amount="12" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='turret_m_wall_sith']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="15" />
+          <ware ware="energycells" amount="800" />
+          <ware ware="hullparts" amount="15" />
+        </primary>
+      </production>
+    </add>
+	
+	<!-- Engines -->
+	<remove sel="/wares/ware[@id='engine_bff']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_l_imp_acc']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_hapan_m']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_incom']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_incomh']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_tie']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_tiehd']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_lambda']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_berea']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_gozanti_01']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_rendili_isd']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_vindicator']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_imp_light_cruiser']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_546']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_generic_red']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_genericdr_red']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_s_starslinger']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_s_starscreamer']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_m_gg0']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_raider']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_imp_m_travel']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_imp_m_combat']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_ml_ter80']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_ml_galaxy15']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_l_starliner']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_neutron']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_l_gemon4']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_xl_igt10']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_xl_destroyeri']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_xl_procursator']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_xl_destroyerii']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_xl_goliath']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_harrower']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_mc75']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_l_commerce']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='engine_lancerfrigate']/production[@method='closedloop']" />
+	
+	<!-- CL Recipes -->
+	<add sel="/wares/ware[@id='engine_bff']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="14" />
+          <ware ware="energycells" amount="1140" />
+          <ware ware="hullparts" amount="91" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_l_imp_acc']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="97" />
+          <ware ware="energycells" amount="2420" />
+          <ware ware="hullparts" amount="73" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_hapan_m']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+		  <ware ware="claytronics" amount="25" />
+          <ware ware="energycells" amount="1310" />
+          <ware ware="hullparts" amount="135" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_incom']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5" />
+          <ware ware="energycells" amount="400" />
+          <ware ware="hullparts" amount="20" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_incomh']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="11" />
+          <ware ware="energycells" amount="1000" />
+          <ware ware="hullparts" amount="40" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_tie']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="4" />
+          <ware ware="energycells" amount="160" />
+          <ware ware="hullparts" amount="14" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_tiehd']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="7" />
+          <ware ware="energycells" amount="270" />
+          <ware ware="hullparts" amount="24" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_lambda']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="28" />
+          <ware ware="energycells" amount="4500" />
+          <ware ware="hullparts" amount="153" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_berea']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="28" />
+          <ware ware="energycells" amount="4500" />
+          <ware ware="hullparts" amount="153" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_gozanti_01']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="14" />
+          <ware ware="energycells" amount="1140" />
+          <ware ware="hullparts" amount="91" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_rendili_isd']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="119" />
+          <ware ware="energycells" amount="5260" />
+          <ware ware="hullparts" amount="158" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_vindicator']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="75" />
+          <ware ware="energycells" amount="5000" />
+          <ware ware="hullparts" amount="100" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_imp_light_cruiser']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="51" />
+          <ware ware="energycells" amount="3380" />
+          <ware ware="hullparts" amount="68" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_546']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="60" />
+          <ware ware="energycells" amount="4000" />
+          <ware ware="hullparts" amount="80" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_generic_red']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="12" />
+          <ware ware="energycells" amount="480" />
+          <ware ware="hullparts" amount="44" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_genericdr_red']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="8" />
+          <ware ware="energycells" amount="320" />
+          <ware ware="hullparts" amount="29" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_s_starslinger']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="0" />
+          <ware ware="energycells" amount="460" />
+          <ware ware="hullparts" amount="46" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_s_starscreamer']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="12" />
+          <ware ware="energycells" amount="490" />
+          <ware ware="hullparts" amount="44" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_m_gg0']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="10" />
+          <ware ware="energycells" amount="780" />
+          <ware ware="hullparts" amount="63" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_raider']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="18" />
+          <ware ware="energycells" amount="1300" />
+          <ware ware="hullparts" amount="105" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_imp_m_travel']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="8" />
+          <ware ware="energycells" amount="660" />
+          <ware ware="hullparts" amount="53" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_imp_m_combat']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="16" />
+          <ware ware="energycells" amount="1230" />
+          <ware ware="hullparts" amount="98" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_ml_ter80']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5" />
+          <ware ware="energycells" amount="440" />
+          <ware ware="hullparts" amount="22" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_ml_galaxy15']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="29" />
+          <ware ware="energycells" amount="940" />
+          <ware ware="hullparts" amount="47" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_l_starliner']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="268" />
+          <ware ware="energycells" amount="1680" />
+          <ware ware="hullparts" amount="50" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_neutron']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="51" />
+          <ware ware="energycells" amount="3380" />
+          <ware ware="hullparts" amount="68" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_l_gemon4']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="76" />
+          <ware ware="energycells" amount="1890" />
+          <ware ware="hullparts" amount="57" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_xl_igt10']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="65" />
+          <ware ware="energycells" amount="2830" />
+          <ware ware="hullparts" amount="86" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_xl_destroyeri']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="144" />
+          <ware ware="energycells" amount="6400" />
+          <ware ware="hullparts" amount="192" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_xl_procursator']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="144" />
+          <ware ware="energycells" amount="6400" />
+          <ware ware="hullparts" amount="192" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_xl_destroyerii']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="144" />
+          <ware ware="energycells" amount="6400" />
+          <ware ware="hullparts" amount="200" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_xl_goliath']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="85" />
+          <ware ware="energycells" amount="4250" />
+          <ware ware="hullparts" amount="125" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_harrower']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="225" />
+          <ware ware="energycells" amount="16400" />
+          <ware ware="hullparts" amount="450" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='engine_mc75']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="105" />
+          <ware ware="energycells" amount="4400" />
+          <ware ware="hullparts" amount="165" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_l_commerce']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="86" />
+          <ware ware="energycells" amount="2150" />
+          <ware ware="hullparts" amount="65" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='engine_lancerfrigate']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="12" />
+          <ware ware="energycells" amount="1280" />
+          <ware ware="hullparts" amount="20" />
+        </primary>
+      </production>
+    </add>
+	
+	<!-- Shields -->
+	<remove sel="/wares/ware[@id='shield_xll_quitadbluefield']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_lh_kuat900']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_l_station_imp']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_s_gnkastro']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_s_p12']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_s_novaldex40']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_s_novaldex45']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_s_quintadq2']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_s_cec1077']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_s_auxtie']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_s_novaldex60']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_s_r4astro']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_s_q7astro']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_m_novaldexga21_01']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_m_novaldexga21_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_m_novaldexga30_01']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_m_novaldexga30_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_m_cec500x_01']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_m_cec500x_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_m_kuatrc_01']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_m_kuatrc_02']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_light_l_imp']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_ll_dz9']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_ll_440palisade']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_lh_880palisade']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_lh_tablyvb']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_xll_afdoublestrobe']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_xlh_tabgyvx']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_xl_procursator']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_xl_isd_01']/production[@method='closedloop']" />
+	<remove sel="/wares/ware[@id='shield_xl_isd_02']/production[@method='closedloop']" />
+	
+	<!-- CL Recipes -->
+	<add sel="/wares/ware[@id='shield_xll_quitadbluefield']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="53" />
+          <ware ware="energycells" amount="6410" />
+          <ware ware="hullparts" amount="46" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_lh_kuat900']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="64" />
+          <ware ware="energycells" amount="6400" />
+          <ware ware="hullparts" amount="54" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_l_station_imp']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="28" />
+          <ware ware="energycells" amount="3000" />
+          <ware ware="hullparts" amount="30" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_s_gnkastro']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="1500" />
+          <ware ware="hullparts" amount="7" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_s_p12']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="290" />
+          <ware ware="hullparts" amount="3" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_s_novaldex40']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="330" />
+          <ware ware="hullparts" amount="3" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_s_novaldex45']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="330" />
+          <ware ware="hullparts" amount="3" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_s_quintadq2']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="340" />
+          <ware ware="hullparts" amount="3" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_s_cec1077']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="370" />
+          <ware ware="hullparts" amount="3" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_s_auxtie']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="energycells" amount="150" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_s_novaldex60']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="420" />
+          <ware ware="hullparts" amount="4" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_s_r4astro']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="3" />
+          <ware ware="energycells" amount="330" />
+          <ware ware="hullparts" amount="3" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_s_q7astro']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="2" />
+          <ware ware="energycells" amount="280" />
+          <ware ware="hullparts" amount="3" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_m_novaldexga21_01']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5" />
+          <ware ware="energycells" amount="154" />
+          <ware ware="hullparts" amount="15" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_m_novaldexga21_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="5" />
+          <ware ware="energycells" amount="154" />
+          <ware ware="hullparts" amount="15" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_m_novaldexga30_01']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="7" />
+          <ware ware="energycells" amount="2000" />
+          <ware ware="hullparts" amount="20" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_m_novaldexga30_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="7" />
+          <ware ware="energycells" amount="2000" />
+          <ware ware="hullparts" amount="20" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_m_cec500x_01']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="9" />
+          <ware ware="energycells" amount="2500" />
+          <ware ware="hullparts" amount="25" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_m_cec500x_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="9" />
+          <ware ware="energycells" amount="2500" />
+          <ware ware="hullparts" amount="25" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_m_kuatrc_01']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="9" />
+          <ware ware="energycells" amount="2700" />
+          <ware ware="hullparts" amount="27" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_m_kuatrc_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="9" />
+          <ware ware="energycells" amount="2700" />
+          <ware ware="hullparts" amount="27" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_light_l_imp']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="10" />
+          <ware ware="energycells" amount="2250" />
+          <ware ware="hullparts" amount="30" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_ll_dz9']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="23" />
+          <ware ware="energycells" amount="2230" />
+          <ware ware="hullparts" amount="22" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_ll_440palisade']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="23" />
+          <ware ware="energycells" amount="2100" />
+          <ware ware="hullparts" amount="21" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_lh_880palisade']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="50" />
+          <ware ware="energycells" amount="4950" />
+          <ware ware="hullparts" amount="41" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_lh_tablyvb']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="60" />
+          <ware ware="energycells" amount="5840" />
+          <ware ware="hullparts" amount="50" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_xll_afdoublestrobe']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="60" />
+          <ware ware="energycells" amount="5840" />
+          <ware ware="hullparts" amount="50" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_xlh_tabgyvx']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="94" />
+          <ware ware="energycells" amount="11260" />
+          <ware ware="hullparts" amount="80" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_xl_procursator']">
+      <production time="10" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="75" />
+          <ware ware="energycells" amount="10000" />
+          <ware ware="hullparts" amount="70" />
+        </primary>
+      </production>
+    </add>
+	<add sel="/wares/ware[@id='shield_xl_isd_01']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="85" />
+          <ware ware="energycells" amount="10200" />
+          <ware ware="hullparts" amount="72" />
+        </primary>
+      </production>
+    </add>
+    <add sel="/wares/ware[@id='shield_xl_isd_02']">
+      <production time="1" amount="1" method="closedloop" name="{20206,1201}">
+        <primary>
+          <ware ware="claytronics" amount="108" />
+          <ware ware="energycells" amount="13000" />
+          <ware ware="hullparts" amount="93" />
+        </primary>
+      </production>
+    </add>
+	
+</diff>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diff>
+	<add sel="/language">
+		<page id="7112025" voice="no">
+			<t id="1">Expeditionary</t>
+			<t id="2">Gage-class Transport</t>
+			<t id="3">The Gage-class Transport is a refitted variant of the Terminus, used as a cargo transport. Its heavier armaments were forfeited for more cargo space, but it still boasts an adequite array of weaponry to defend itself.</t>
+			<t id="4">Gage</t>
+			<t id="5">The origin of this so called "Sith Empire" is unclear.\nSome suggest they might be remnants of the old Sith Empire from the times of the Old Republic, waiting until now to make a comeback, while others suggest some of Sheev Palpatine's most fanatical followers formed this new organization, following the ways of the Sith.\n\nWhat is clear however, is that they are extermely dangerous, and will attack anyone on sight, including Imperial Remnants.</t>
+			<t id="6">Logistics Vessel</t>
+			
+			<!-- Cut content -->
+			<t id="7">Sith Claytronics Production</t>
+			<t id="8">An experimental facility, that uses Rhydonium Cells to produce Module PreFabs, these modules are only available from the Sith Empire.</t>
+			
+			<t id="9">Ziost</t>
+			<t id="10">Escort</t>
+			<t id="11">Expeditionary Fleet</t>
+			<t id="12">Sith Core Space</t>
+			<t id="13">Origin-, and primary space of Sith-aligned forces, it is advised to keep away from these sectors, as Sith forces will shoot anyone not part of their organization.</t>
+			
+			<!-- Sith Habitation modules -->
+			<t id="14">Sith L Habitat</t>
+			<t id="15">Sith M Habitat</t>
+			<t id="16">Sith S Habitat</t>
+		</page>
+	</add>
+</diff>

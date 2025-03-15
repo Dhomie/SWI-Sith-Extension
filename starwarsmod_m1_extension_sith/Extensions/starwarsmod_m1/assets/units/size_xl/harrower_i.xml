@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<diff>
+	<!-- L Turrets -->
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-bridge-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-bridge-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-bridge-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-bridge-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-bridge-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-bridge-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-bridge-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-bridge-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-back-bottom-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-back-bottom-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-back-bottom-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-back-bottom-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-back-bottom-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-back-bottom-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-back-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-back-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-back-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-back-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-back-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-back-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-front-bottom-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-front-bottom-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-front-bottom-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-front-bottom-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-front-bottom-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-front-bottom-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-front-bottom-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-front-bottom-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-fin-bottom-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-fin-bottom-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-fin-bottom-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-fin-bottom-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-fin-bottom-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-fin-bottom-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-fin-bottom-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-fin-bottom-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-fin-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-fin-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-fin-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-fin-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-fin-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-fin-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-fin-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-fin-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-front-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-front-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-front-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-front-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-front-mtb_1']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-front-mtb_2']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-front-mtb_3']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-front-mtb_4']/@tags">turret medium md_mando mtbsingled10 mtbdual mtbquad green red hittable</replace>
+	
+	<!-- S Turrets -->
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-mid-pd_6']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-mid-pd_5']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-mid-pd_4']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-mid-pd_3']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-mid-pd_2']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-mid-pd_1']/@tags">turret small llaser duallaser red green hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-mid-pd_6']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-mid-pd_5']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-mid-pd_4']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-mid-pd_3']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-mid-pd_2']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-mid-pd_1']/@tags">turret small llaser duallaser red green hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top--bottom-pd_1']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top--bottom-pd_2']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top--bottom-pd_3']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top--bottom-pd_4']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top--bottom-pd_5']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top--bottom-pd_6']/@tags">turret small llaser duallaser red green hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top--bottom-pd_1']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top--bottom-pd_2']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top--bottom-pd_3']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top--bottom-pd_4']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top--bottom-pd_5']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top--bottom-pd_6']/@tags">turret small llaser duallaser red green hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top-pd_1']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top-pd_2']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top-pd_3']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top-pd_4']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top-pd_5']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top-pd_6']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top-pd_7']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_left-top-pd_8']/@tags">turret small llaser duallaser red green hittable</replace>
+	
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top-pd_1']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top-pd_2']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top-pd_3']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top-pd_4']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top-pd_5']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top-pd_6']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top-pd_7']/@tags">turret small llaser duallaser red green hittable</replace>
+	<replace sel="//component[@name='harrower_i']/connections/connection[@name='con_m_turret_right-top-pd_8']/@tags">turret small llaser duallaser red green hittable</replace>
+</diff>
+

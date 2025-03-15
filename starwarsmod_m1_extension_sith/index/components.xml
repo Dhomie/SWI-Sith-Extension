@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ?xml-stylesheet href="index.xsl" type="text/xsl" ? -->
+<diff>
+	<add sel="/index">
+		<!-- L -->
+		<entry name="gage_ship" value="extensions\starwarsmod_m1_extension_sith\assets\units\size_l\gage_ship" />
+	</add>
+
+</diff>

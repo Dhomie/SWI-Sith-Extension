@@ -1,0 +1,264 @@
+<diff>
+	<!-- SITH EMPIRE -->
+	<!-- Replace default equipment mods for ships with better versions suiting their profiles -->
+	<!-- Mostly Imperial-named ones were picked, but the MonCal Shield Banks are default SWI -->
+	
+	<!-- The default Terminus, mostly used for home defense patrols -->
+	<!-- Along with the default cloak mod, it'll receive a shield boost as well -->
+	<replace sel="/ships/ship[@id='sith_terminus']/equipmentmods">
+		<equipmentmods>
+			<ship ware="mod_ship_radarcloak_01_mk2" />
+			<shield ware="mod_shield_capacity_01_mk2" />
+		</equipmentmods>
+	</replace>
+
+	<!-- The special Inquisition Terminus, used by assault, and expeditionary patrols -->
+	<!-- Along with the default advanced cloak mod, it'll receive a shield boost, better mobility, and weapon damage + rotation boost -->
+	<replace sel="/ships/ship[@id='sith_terminus_inqusition']/equipmentmods">
+		<equipmentmods>
+			<mods list="[ware.mod_shield_capacity_01_mk2, 
+				ware.mod_ship_radarcloak_01_mk3, 
+				ware.mod_engine_rotationthrust_01_mk3, 
+				ware.mod_weapon_damage_04_mk2, ware.mod_weapon_damage_04_mk2, ware.mod_weapon_damage_04_mk2, ware.mod_weapon_damage_04_mk2, ware.mod_weapon_damage_04_mk2]"/>
+		</equipmentmods>
+	</replace>
+	
+	<!-- The standard Harrower, used for all kinds of patrols -->
+	<!-- Along with the default shield boost, it'll receive better mobility, and weapon stats -->
+	<replace sel="/ships/ship[@id='sith_harrower']/equipmentmods">
+		<equipmentmods>
+			<mods list="[ware.mod_engine_forwardthrust_01_mk3, 
+				ware.mod_shield_capacity_01_mk2, 
+				ware.mod_ship_mass_01_mk3, 
+				ware.mod_engine_rotationthrust_01_mk3, 
+				ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2,
+				ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2,
+				ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2,
+				ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2,
+				ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2, ware.mod_weapon_surfaceelement_01_mk2,
+				ware.mod_weapon_surfaceelement_01_mk2]"/>
+		</equipmentmods>
+	</replace>
+	
+	<!-- The special Harrower, used for all kinds of patrols, but is otherwise the ultimate XL ship currently available to the Sith -->
+	<!-- Along with the default shield boost, and stealth, it'll receive ship, and weapon stats, the ultimate boss ship to fight -->
+	<replace sel="/ships/ship[@id='sith_harrower_i']/equipmentmods">
+		<equipmentmods>
+			<mods list="[ware.mod_shield_capacity_01_mk2,
+				ware.mod_ship_mass_01_mk2,
+				ware.mod_engine_rotationthrust_01_mk3, 
+				ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3,
+				ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3,
+				ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3,
+				ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3,
+				ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3, ware.mod_weapon_surfaceelement_01_mk3,
+				ware.mod_weapon_surfaceelement_01_mk3]"/>
+		</equipmentmods>
+	</replace>
+	
+	<!-- The standard starfighter loadout, used for all kinds of patrols -->
+	<!-- It'll receive cloak, better mobility, and shields -->
+	<replace sel="/ships/ship[@id='sith_fighter']/equipmentmods">
+		<equipmentmods>
+			<shield ware="mod_shield_capacity_01_mk2" />
+			<ship ware="mod_ship_radarcloak_01_mk2" />
+			<engine ware="mod_engine_rotationthrust_01_mk3" />
+		</equipmentmods>
+	</replace>
+	
+	<!-- Add equipment mods to ships that were added by SWI 0.85 -->
+	<add sel="/ships/ship[@id='sith_sith_destroyer']">
+		<equipmentmods>
+			<ship ware="mod_ship_radarcloak_01_mk2" />
+			<shield ware="mod_shield_capacity_01_mk2" />
+		</equipmentmods>
+	</add>
+	<add sel="/ships/ship[@id='sith_builder_l']">
+		<equipmentmods>
+			<engine ware="mod_engine_forwardthrust_01_mk3" />
+		</equipmentmods>
+	</add>
+	<add sel="/ships/ship[@id='sith_trader_container_l']">
+		<equipmentmods>
+			<engine ware="mod_engine_forwardthrust_01_mk3" />
+		</equipmentmods>
+	</add>
+	<add sel="/ships/ship[@id='sith_miner_solid_l']">
+		<equipmentmods>
+			<weapon ware="mod_weapon_mining_01_mk3" />
+			<engine ware="mod_engine_forwardthrust_01_mk3" />
+		</equipmentmods>
+	</add>
+	<add sel="/ships/ship[@id='sith_miner_liquid_l']">
+		<equipmentmods>
+			<engine ware="mod_engine_forwardthrust_01_mk3" />
+		</equipmentmods>
+	</add>
+	
+    <add sel="/ships">
+	<!-- Begin new combat ships -->
+		<ship id="sith_combat_m" group="sith_combat_m">
+			<category tags="[military, mixed, mission]" faction="sith" size="ship_m" />
+			<pilot>
+				<select faction="sith" tags="elitepilot" />
+			</pilot>
+			<drop ref="ship_small_military" />
+			<people ref="sith_elite_military_crew" />
+			<equipmentmods>
+				<ship ware="mod_ship_radarcloak_01_mk2" />
+				<shield ware="mod_shield_capacity_01_mk2" />
+			</equipmentmods>
+		</ship>
+		
+		<!--
+		<ship id="sith_combat_l" group="sith_combat_l">
+			<category tags="[military, vigil, mission]" faction="sith" size="ship_l" />
+			<pilot>
+				<select faction="sith" tags="elitepilot" />
+			</pilot>
+			<drop ref="ship_small_military" />
+			<people ref="sith_elite_military_crew" />
+			<equipmentmods>
+				<ship ware="mod_ship_radarcloak_01_mk2" />
+				<shield ware="mod_shield_capacity_01_mk2" />
+			</equipmentmods>
+		</ship>
+		-->
+		
+		<ship id="sith_raider_m" group="sith_raider_m">
+			<category tags="[military, raider, mission]" faction="sith" size="ship_m" />
+			<pilot>
+				<select faction="sith" tags="elitepilot" />
+			</pilot>
+			<drop ref="ship_small_military" />
+			<people ref="sith_elite_military_crew" />
+			<equipmentmods>
+				<ship ware="mod_ship_radarcloak_01_mk2" />
+				<shield ware="mod_shield_capacity_01_mk2" />
+			</equipmentmods>
+		</ship>
+		
+		<ship id="sith_corvette_m" group="sith_corvette_m">
+			<category tags="[military, corvette, mission]" faction="sith" size="ship_m" />
+			<pilot>
+				<select faction="sith" tags="elitepilot" />
+			</pilot>
+			<drop ref="ship_small_military" />
+			<people ref="sith_elite_military_crew" />
+			<equipmentmods>
+				<ship ware="mod_ship_radarcloak_01_mk2" />
+				<shield ware="mod_shield_capacity_01_mk2" />
+			</equipmentmods>
+		</ship>
+		
+		<ship id="sith_fighter_fury" group="sith_fighter_fury">
+			<category tags="[military, tiefury, mission]" faction="sith" size="ship_s" />
+			<pilot>
+				<select faction="sith" tags="elitepilot" />
+			</pilot>
+			<drop ref="ship_small_military" />
+			<people ref="sith_elite_military_crew" />
+			<equipmentmods>
+				<ship ware="mod_ship_radarcloak_01_mk2" />
+			</equipmentmods>
+		</ship>
+		
+		<ship id="sith_fighter_supremacy" group="sith_fighter_supremacy">
+			<category tags="[military, supremacy, mission]" faction="sith" size="ship_s" />
+			<pilot>
+				<select faction="sith" tags="elitepilot" />
+			</pilot>
+			<drop ref="ship_small_military" />
+			<people ref="sith_elite_military_crew" />
+			<equipmentmods>
+				<ship ware="mod_ship_radarcloak_01_mk2" />
+			</equipmentmods>
+		</ship>
+		
+		<ship id="sith_xl_resupply" group="sith_xl_resupply">
+			<category tags="[military, mission, resupplier]" faction="sith" size="ship_xl"/>
+			<pilot>
+				<select faction="sith" tags="elitepilot"/>
+			</pilot>
+			<drop ref="ship_large_military"/>
+			<people ref="sith_elite_military_crew"/>
+			<equipmentmods>
+				<shield ware="mod_shield_capacity_01_mk2" />
+				<ship ware="mod_ship_mass_01_mk2" />
+			</equipmentmods>
+		</ship>
+	
+	<!-- Begin new civilian ships -->
+		<ship id="sith_trader_container_m" group="sith_trader_container_m">
+			<category tags="[trader, container, mission]" faction="sith" size="ship_m" />
+			<pilot>
+				<select faction="sith" tags="traderpilot" />
+			</pilot>
+			<basket basket="all_container" />
+			<drop ref="ship_medium_civilian" />
+			<people ref="sith_freighter_crew" />
+			<equipmentmods>
+				<engine ware="mod_engine_forwardthrust_01_mk3" />
+			</equipmentmods>
+		</ship>
+		
+		<ship id="sith_miner_solid_m" group="sith_miner_solid_m">
+			<category tags="[miner, solid, mission]" faction="sith" size="ship_m" />
+			<pilot>
+				<select faction="sith" tags="traderpilot" />
+			</pilot>
+			<basket basket="minerals" />
+			<drop ref="ship_medium_civilian" />
+			<people ref="sith_freighter_crew" />
+			<!-- Mining ship boost -->
+			<equipmentmods>
+				<weapon ware="mod_weapon_mining_01_mk3" />
+				<engine ware="mod_engine_forwardthrust_01_mk3" />
+			</equipmentmods>
+        </ship>
+
+		<ship id="sith_miner_liquid_m" group="sith_miner_liquid_m">
+			<category tags="[miner, liquid, mission]" faction="sith" size="ship_m" />
+			<pilot>
+				<select faction="sith" tags="traderpilot" />
+			</pilot>
+			<basket basket="gases" />
+			<drop ref="ship_medium_civilian" />
+			<people ref="sith_freighter_crew" />
+			<!-- Mining ship boost -->
+			<equipmentmods>
+				<weapon ware="mod_weapon_mining_01_mk3" />
+				<engine ware="mod_engine_forwardthrust_01_mk3" />
+			</equipmentmods>
+		</ship>
+	  
+		<!-- CYC Scrapper is only used by the Hutt Cartel, the ship group only contains that ship, so no need to create a Sith specific one-->
+		<ship id="sith_scrapper_l" group="huttcartel_scrapper">
+			<category tags="[compactor, mission]" faction="sith" size="ship_l" />
+			<pilot>
+				<select faction="sith" tags="traderpilot" />
+			</pilot>
+			<basket basket="all_container"/>
+			<drop ref="ship_large_civilian" />
+			<people ref="sith_freighter_crew" />
+			<!-- Speed boost -->
+			<equipmentmods>
+				<engine ware="mod_engine_forwardthrust_01_mk3" />
+			</equipmentmods>
+		</ship>
+	  
+		<!-- TUG Scrapper is used as a universal civilian ship, the ship group only contains that ship, so no need to create a Sith specific one-->
+		<ship id="sith_scavanger_s" group="civilian_scavanger_s">
+			<category tags="[tug, mission]" faction="sith" size="ship_s" />
+			<pilot>
+			<select faction="sith" tags="traderpilot" />
+			</pilot>
+			<drop ref="ship_small_civilian" />
+			<people ref="sith_freighter_crew" />
+			<!-- Speed boost -->
+			<equipmentmods>
+				<engine ware="mod_engine_forwardthrust_01_mk3" />
+			</equipmentmods>
+		</ship>
+    </add>
+</diff>

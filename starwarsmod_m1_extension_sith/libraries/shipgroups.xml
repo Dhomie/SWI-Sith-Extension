@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+	
+	<replace sel="//groups/group[@name='sith_fighter']">
+		<group name="sith_fighter">
+			<select macro="tie_fury_e_macro" weight="10" />
+			<select macro="sith_supremacy_macro" weight="90" />
+		</group>
+	</replace>
+	
+	<!-- L Transports -->
+	<replace sel="//groups/group[@name='sith_trader_container_l']">
+		<group name="sith_trader_container_l">
+			<select macro="sith_freighter_macro" weight="40"/>
+			<select macro="acclamator1_macro" weight="45"/>
+			<select macro="gage_macro" weight="55"/>
+		</group>
+	</replace>
+
+	<add sel="/groups">
+	<!-- SITH EMPIRE -->	
+	
+		<!-- M Transports -->
+		<group name="sith_trader_container_m">
+			<select macro="impgozanti_at_macro" weight="3"/>
+			<select macro="lambda_shuttle_macro" weight="1"/>
+			<select macro="bff_01_macro" weight="4"/>
+			<select macro="css1_macro" weight="98"/>
+		</group>
+		
+		<!-- Harbor Auxiliary for fleet tender duties -->
+		<group name="sith_xl_resupply">
+			<select macro="ship_gen_resupplier_01_macro" weight="100"/>
+		</group>
+		
+		<!-- TIE Fury -->
+		<group name="sith_fighter_fury">
+			<select macro="tie_fury_e_macro" weight="100" />
+		</group>
+		
+		<!-- Supremacy -->
+		<group name="sith_fighter_supremacy">
+			<select macro="sith_supremacy_macro" weight="100" />
+		</group>
+		
+		<!-- M combat ships -->
+		<group name="sith_combat_m">
+			<select macro="raider_macro" weight="40" />
+			<select macro="hapan_m_macro" weight="75" />
+		</group>
+		
+		<!-- Raider M combat ship -->
+		<group name="sith_raider_m">
+			<select macro="raider_macro" weight="100" />
+		</group>
+		
+		<!-- Hapan M combat ship, but it's origin is kinda from the Sith -->
+		<group name="sith_corvette_m">
+			<select macro="hapan_m_macro" weight="100" />
+		</group>
+		
+		<!-- Miners -->
+		<group name="sith_miner_solid_m">
+			<select macro="berea_shuttle_macro" weight="100"/>
+		</group>
+	  
+		<group name="sith_miner_liquid_m">
+			<select macro="berea_shuttle_gas_macro" weight="100"/>
+		</group>
+		
+		<group name="sith_miner_solid_l">
+			<select macro="heraklon_solid_macro" weight="100"/>
+		</group>
+		
+		<group name="sith_miner_liquid_l">
+			<select macro="heraklon_liquid_macro" weight="100"/>
+		</group>
+	</add>
+</diff>

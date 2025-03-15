@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+	<!-- Replace the existing planetary aid script for the Sith -->
+<replace sel="/mdscript/cues">
+	<cues>
+		<cue name="Init" mapeditor="false" namespace="this">
+			<conditions>
+				<check_all>
+					<check_any>
+						<event_cue_signalled cue="md.Setup.GameStart" />
+						<event_player_created />
+					</check_any>
+					<check_value value="player.galaxy.macro == macro.swi_galaxy_macro" comment="only in main SW-galaxy" />
+				</check_all>
+			</conditions>
+			<delay exact="10s"/>
+
+			<cues>
+				<cue name="FindFillSithStations" instantiate="true" checkinterval="10min" checktime="player.age + 30s">
+					<actions>
+						<!-- Reset the table every time we check for stations -->
+						<do_if value="$FillStationGroup">
+							<remove_value name="$FillStationGroup" />
+						</do_if>
+						<!-- <set_value name="$FillStationGroup" exact="[]" comment="Best to reset the list because the same object can populate lists multiple times" /> -->
+						<find_station_by_true_owner name="$FillStationGroup" space="player.galaxy" faction="faction.sith" checkoperational="true" functional="true" multiple="true">
+							<match_any>
+								<match shipyard="true"/>
+								<match wharf="true"/>
+								<match equipmentdock="true"/>
+								<!--<match tradestation="true"/>-->
+								<!--<match defencestation="true"/>-->
+								<!--<match factionheadquarters="true"/>-->
+							</match_any>
+						</find_station_by_true_owner>
+						
+						<set_value name="$DebugGroup" exact="'Fill Station Group:'" />
+						<do_all exact="$FillStationGroup.count" counter="$GroupCounter">
+							<set_value name="$DebugGroup" exact="$DebugGroup + '//' + $FillStationGroup.{$GroupCounter}.knownname" />
+						</do_all>
+						<debug_text text="'%1'.[$DebugGroup]" />
+						<remove_value name="$DebugGroup" />
+					</actions>
+				</cue>
+				<cue name="ProcessSithWaresLoop" instantiate="true" checkinterval="3min" checktime="player.age + 20s">
+					<actions>
+						<set_value name="$delayalpha" exact="0s" />
+						<!-- Check if the station group exists, and only then try processing their storage -->
+						<do_if value="$FillStationGroup">
+							<do_if value="$FillStationGroup.count" min="1">
+								<do_for_each name="$FillStation" in="$FillStationGroup">
+									<set_value name="$delayalpha" exact="($delayalpha + 1.0)s" />
+									<run_actions ref="ProcessSithWares">
+										<param name="Station" value="$FillStation" />
+										<param name="Delay" value="$delayalpha" />
+									</run_actions>
+								</do_for_each>
+							</do_if>
+						</do_if>
+						<remove_value name="$delayalpha" />
+					</actions>
+				</cue>
+
+				<library name="ProcessSithWares" purpose="run_actions">
+					<params>
+						<param name="Station" />
+						<param name="Delay" />
+					</params>
+					<!-- <delay exact="$Delay" /> -->
+					
+					<actions>
+						<do_if value="$Station.exists">
+							<set_value name="$_SingleLog_1" exact="0" />
+								<do_all exact="$Station.resources.list.count" counter="$k">
+									<set_value name="$ware" exact="$Station.resources.list.{$k}" />
+									<set_value name="$waresAmount" exact="$Station.cargo.{$ware}.count" />
+									<set_value name="$maxWaresAmount" exact="$Station.cargo.{$ware}.target" />
+									<set_value name="$addWaresAmount" exact="0" />
+									<set_value name="$removeWaresAmount" exact="0" />
+									<set_value name="$storagePercentage" exact="0.15" />
+
+									<!-- Go for 20% for ship building stations -->
+									<do_if value="$Station.canbuildships">
+										<set_value name="$storagePercentage" exact="0.2" />
+									</do_if>
+
+									<!-- Go for 10% for EQ Docks -->
+									<do_if value="$Station.isequipmentdock">
+										<set_value name="$storagePercentage" exact="0.1" />
+									</do_if>
+
+									<!-- Check if we have excess wares, and get the amount -->
+									<do_if value="$waresAmount gt $maxWaresAmount">
+										<set_value name="$removeWaresAmount" exact="($waresAmount - $maxWaresAmount)i" />
+									</do_if>
+
+									<!-- REMOVE Raw Scrap cargo, if somehow it exceeds the max capacity, we'll remove them over a few cycles -->
+									<do_if value="($waresAmount gt 0 and $ware == ware.rawscrap)">
+										<set_value name="$removeWaresAmount" exact="($waresAmount)i" />
+									</do_if>
+
+									<!-- Restore 1.5% of total wares (EXCLUDING RAW SCRAP) counts if they fall below 20%/10% every 3 minutes to avoid a total collapse -->
+									<do_if value="($waresAmount lt $maxWaresAmount * $storagePercentage) and ($ware != ware.rawscrap)">
+										<set_value name="$addWaresAmount" exact="($maxWaresAmount * 0.015)i" /> <!-- (number)i converts it to an integer -->
+									</do_if>
+									<do_if value="$addWaresAmount gt 0">
+										<debug_text text="'Adding %2 units of %1 to station %3'.[$ware.name, $addWaresAmount, $Station.knownname]" />
+										<add_cargo object="$Station" ware="$ware" exact="$addWaresAmount" />
+									</do_if>
+
+									<!-- Remove excess/invalid wares-->
+									<do_if value="$removeWaresAmount gt 0">
+										<debug_text text="'Removing %2 units of %1 from station %3'.[$ware.name, $removeWaresAmount, $Station.knownname]" />
+										<remove_cargo object="$Station" ware="$ware" exact="$removeWaresAmount" />
+									</do_if>
+									
+									<do_if value="$addWaresAmount gt 0 or $removeWaresAmount gt 0">
+										<do_if value="$_SingleLog_1 == 0">
+										<!-- single log -->
+											<debug_text text="'[%2] -- Processing Wharf/Shipyard/EQD Cargo of %1'.[$Station.knownname, player.systemtime.{'%Y-%m-%d %H:%M:%S'}]" />
+											<set_value name="$_SingleLog_1" exact="1" />
+										</do_if>
+									</do_if>
+							</do_all>
+						  
+							<remove_value name="$ware" />
+							<remove_value name="$waresAmount" />
+							<remove_value name="$maxWaresAmount" />
+							<remove_value name="$addWaresAmount" />
+							<remove_value name="$removeWaresAmount" />
+							<remove_value name="$storagePercentage" />
+						</do_if>
+					</actions>
+				</library>
+				
+			</cues>
+		</cue>
+	</cues>
+</replace>
+</diff>

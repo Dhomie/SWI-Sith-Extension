@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <diff>
-	
 	<!-- Handle new Sith modules introduced by SWI 0.85 -->
 	<add sel="/modules">
 		<!-- Sith Habitation Modules -->
@@ -86,18 +85,20 @@
 	<add sel="//module[@id='prod_gen_energycells']/category">
 		<extension faction="[sith]" />
 	</add>
+	<add sel="//module[@id='welfare_gen']/category">
+		<extension faction="[sith]" />
+	</add>
+	<!-- TODO: Update, and add the Terran processing module
+	<add sel="//module[@id='processing_hutt_scrap']/category">
+		<extension faction="[sith]" />
+	</add>
 	<add sel="//module[@id='processing_gen']/category">
 		<extension faction="[sith]" />
 	</add>
 	<add sel="//module[@id='recycling_gen']/category">
 		<extension faction="[sith]" />
 	</add>
-	<add sel="//module[@id='welfare_gen']/category">
-		<extension faction="[sith]" />
-	</add>
-	<add sel="//module[@id='processing_hutt_scrap']/category">
-		<extension faction="[sith]" />
-	</add>
+	-->
 	
 	<!-- Old Closed Loop module sets, in case we ever want to use these again -->
 	<!--

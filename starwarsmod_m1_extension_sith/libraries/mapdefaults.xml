@@ -2,33 +2,9 @@
 <diff>
 <!-- System solar output, and gamestart station count adjustments -->
 <!-- Adding *factionlogic="false"* variable to *area* will prevent the AI factions from claiming it by normal means -->
-
-	<!-- Sith core sectors -->
-	<!--
-	<add sel="//defaults">
-		<dataset macro="swi_cluster_sith_space_macro">
-			<properties>
-				<identification name="{7112025,12}" description="{7112025,13}" system="100"/>
-			</properties>
-		</dataset>
-	</add>
-	-->
-
 	<replace sel="/defaults/dataset[@macro='swi_clusterziost_macro']/properties/area">
 		<area sunlight="5.0" economy="1" security="1" />
 	</replace>
-	
-	<add sel="/defaults/dataset[@macro='swi_clusterziost_macro']/properties">
-		<system>
-			<space environment="{1042,12011}(Clear Space)"/>
-			<suns>
-				<sun class="{1042,13021}(Yellow Dwarf)"/>
-			</suns>
-			<planets>
-				<planet name="{7112025,9}(Ziost)" class="{1042,14101}(Earth Analog)" geology="{1042,15121}(Swamp)" atmosphere="{1042,11071}(Nitrogen/Oxygen)" population="{1042,10021}" maxpopulation="1818450000" settlements="{1042,16041}(Multiple Cities)" part="planet"/>
-			</planets>
-		</system>
-	</add>
 	
 	<replace sel="/defaults/dataset[@macro='swi_clusterdromundkaas_macro']/properties/area">
 		<area sunlight="1.25" economy="1" security="1" />
@@ -74,10 +50,12 @@
 		<area sunlight="0.5" economy="1" security="1" />
 	</replace>
 	
-	<!-- Enabled faction logic -->
+	<!-- Reverted for now, we don't need the ICG to expand where they shouldn't, Smuggler's Run is more than enough to go for the Wild Space sectors -->
+	<!--
 	<replace sel="/defaults/dataset[@macro='swi_clusterwrea_macro']/properties/area">
 		<area sunlight="0.5" economy="1" security="1" />
 	</replace>
+	-->
 	
 <!-- Let the NRL jump into the action -->
 	<!-- Enabled faction logic -->

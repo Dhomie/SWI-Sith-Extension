@@ -19,10 +19,11 @@
 				<cue name="FindFillSithStations" instantiate="true" checkinterval="10min" checktime="player.age + 30s">
 					<actions>
 						<!-- Reset the table every time we check for stations -->
-						<do_if value="$FillStationGroup">
+						<do_if value="$FillStationGroup?">
 							<remove_value name="$FillStationGroup" />
 						</do_if>
 						<!-- <set_value name="$FillStationGroup" exact="[]" comment="Best to reset the list because the same object can populate lists multiple times" /> -->
+						
 						<find_station_by_true_owner name="$FillStationGroup" space="player.galaxy" faction="faction.sith" checkoperational="true" functional="true" multiple="true">
 							<match_any>
 								<match shipyard="true"/>
@@ -46,13 +47,11 @@
 					<actions>
 						<set_value name="$delayalpha" exact="0s" />
 						<!-- Check if the station group exists, and only then try processing their storage -->
-						<do_if value="$FillStationGroup">
+						<do_if value="$FillStationGroup?">
 							<do_if value="$FillStationGroup.count" min="1">
 								<do_for_each name="$FillStation" in="$FillStationGroup">
-									<set_value name="$delayalpha" exact="($delayalpha + 1.0)s" />
 									<run_actions ref="ProcessSithWares">
 										<param name="Station" value="$FillStation" />
-										<param name="Delay" value="$delayalpha" />
 									</run_actions>
 								</do_for_each>
 							</do_if>
@@ -64,9 +63,7 @@
 				<library name="ProcessSithWares" purpose="run_actions">
 					<params>
 						<param name="Station" />
-						<param name="Delay" />
 					</params>
-					<!-- <delay exact="$Delay" /> -->
 					
 					<actions>
 						<do_if value="$Station.exists">
@@ -79,14 +76,14 @@
 									<set_value name="$removeWaresAmount" exact="0" />
 									<set_value name="$storagePercentage" exact="0.15" />
 
-									<!-- Go for 20% for ship building stations -->
+									<!-- Go for 40% for ship building stations -->
 									<do_if value="$Station.canbuildships">
-										<set_value name="$storagePercentage" exact="0.2" />
+										<set_value name="$storagePercentage" exact="0.4" />
 									</do_if>
 
-									<!-- Go for 10% for EQ Docks -->
+									<!-- Go for 25% for EQ Docks -->
 									<do_if value="$Station.isequipmentdock">
-										<set_value name="$storagePercentage" exact="0.1" />
+										<set_value name="$storagePercentage" exact="0.25" />
 									</do_if>
 
 									<!-- Check if we have excess wares, and get the amount -->
@@ -99,7 +96,7 @@
 										<set_value name="$removeWaresAmount" exact="($waresAmount)i" />
 									</do_if>
 
-									<!-- Restore 1.5% of total wares (EXCLUDING RAW SCRAP) counts if they fall below 20%/10% every 3 minutes to avoid a total collapse -->
+									<!-- Restore 1.5% of total wares (EXCLUDING RAW SCRAP) counts if they fall below 40%/25% every 3 minutes to avoid a total collapse -->
 									<do_if value="($waresAmount lt $maxWaresAmount * $storagePercentage) and ($ware != ware.rawscrap)">
 										<set_value name="$addWaresAmount" exact="($maxWaresAmount * 0.015)i" /> <!-- (number)i converts it to an integer -->
 									</do_if>

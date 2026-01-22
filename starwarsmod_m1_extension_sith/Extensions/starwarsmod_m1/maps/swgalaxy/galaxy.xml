@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
-	<add sel="/macros/macro[@name='swi_galaxy_macro']/connections">
-	<!-- Taanab - Roqoo JG connection -->
-		<connection name="swi_gate_pair_ctaanab_croqoo" ref="destination" path="../swi_clustertaanab_connection/swi_clustertaanab_sector001_connection/swi_gate_roqoo_clustertaanab_sector001_connection/swi_gate_ctaanab_croqoo_connection">
-            <macro connection="destination" path="../../../../../swi_clusterroqoo_connection/swi_clusterroqoo_sector001_connection/swi_gate_taanab_clusterroqoo_sector001_connection/swi_gate_croqoo_ctaanab_connection" />
-        </connection>
-	
+	<add sel="/macros/macro[@name='swi_galaxy_macro']/connections">	
 	<!-- Thule - Ziost JG connection -->
 		<connection name="swi_gate_pair_cthule_cziosts" ref="destination" path="../swi_clusterthule_connection/swi_clusterthule_sector001_connection/swi_gate_ziost_clusterthule_sector001_connection/swi_gate_cthule_cziost_connection">
             <macro connection="destination" path="../../../../../swi_clusterziost_connection/swi_clusterziost_sector001_connection/swi_gate_thule_clusterziost_sector001_connection/swi_gate_cziost_cthule_connection" />

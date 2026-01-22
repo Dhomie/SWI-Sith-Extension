@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
-	<!--
-    <add sel="/mdscript/cues/library[@name='Manage_Stations']/cues/cue[@name='Process']/cues/cue[@name='Analyse_Stations']/actions/do_elseif[@value='@$DesiredTradeStationPatchMarker']" pos="after">
-        <do_elseif value="$Faction == faction.sith">
-            <set_value name="$DesiredTradeStation" exact="3" />
-        </do_elseif>
-    </add>
-	
-	<add sel="/mdscript/cues/library[@name='Manage_Stations']/cues/cue[@name='Process']/cues/cue[@name='Analyse_Stations']/actions/do_elseif[@value='@$DesiredWharfPatchMarker']" pos="after">
-        <do_elseif value="$Faction == faction.sith">
-            <set_value name="$DesiredWharfs" exact="3" />
-        </do_elseif>
-    </add>
-	-->
-	
-	<!-- We want a total of 3 shipyards for the Sith, increment the default 2 by 1 -->
-	<add sel="/mdscript/cues/library[@name='Manage_Stations']/cues/cue[@name='Process']/cues/cue[@name='Analyse_Stations']/actions/do_elseif[@value='@$DesiredShipyardPatchMarker']" pos="after">
+	<!-- SWI now handles this, default is 3, set to 4 if Sith Crisis event chain is triggered -->
+	<!--<add sel="/mdscript/cues/library[@name='Manage_Stations']/cues/cue[@name='Process']/cues/cue[@name='Analyse_Stations']/actions/do_elseif[@value='@$DesiredShipyardPatchMarker']" pos="after">
 		<do_if value="$Faction == faction.sith">
 			<set_value name="$DesiredShipyards" operation="add" exact="1"/>
 		</do_if>
-	</add>
+	</add>-->
 	
 	<!-- Single EQ Dock -->
 	<add sel="/mdscript/cues/library[@name='Manage_Stations']/cues/cue[@name='Process']/cues/cue[@name='Analyse_Stations']/actions/do_elseif[@value='@$DesiredEquipmentDockPatchMarker']" pos="after">

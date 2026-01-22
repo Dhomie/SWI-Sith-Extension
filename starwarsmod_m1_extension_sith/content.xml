@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<content id="SWI_Extension_SithExtension" name="SWI Active Sith Faction" description="Acive Sith faction mod with a Closed Loop Economy, for SWI version 0.8X. Closed Loop Reborn mod is optional, as the mod includes its own CL recipes." author="Dhomie/Grandpa Sawyer" version="110" date="2024-09-14" save="1" enabled="1">
-  <dependency id="SW Interworlds" name="Star Wars Interworlds" optional="false"/>
-  <dependency id="starwarsmod_cl_reborn" optional="true" name="SWI - Closed Loop Reborn"/>
+<content id="SWI_Extension_SithExtension" name="SWI Sith Expasion: Crisis Edition" description="Formely knows as the Active Sith mod, this is a testing version for SWI 0.9X that expands the Sith in many ways, turning them into either harder Crisis, or a more dominant ally." author="Dhomie/Grandpa Sawyer" version="200" date="2026-01-22" save="1" enabled="1">
+	<dependency id="SW Interworlds" name="Star Wars Interworlds" optional="false"/>
 </content>

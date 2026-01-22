@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
-	
+	<!-- Sith shippies -->
 	<replace sel="//groups/group[@name='sith_fighter']">
 		<group name="sith_fighter">
 			<select macro="tie_fury_e_macro" weight="10" />
@@ -16,18 +16,18 @@
 			<select macro="gage_macro" weight="55"/>
 		</group>
 	</replace>
-
-	<add sel="/groups">
-	<!-- SITH EMPIRE -->	
 	
-		<!-- M Transports -->
+	<!-- M Transports -->
+	<replace sel="//groups/group[@name='sith_trader_container_m']">
 		<group name="sith_trader_container_m">
-			<select macro="impgozanti_at_macro" weight="3"/>
+			<select macro="impgozanti_at_macro" weight="2"/>
 			<select macro="lambda_shuttle_macro" weight="1"/>
-			<select macro="bff_01_macro" weight="4"/>
+			<select macro="bff_01_macro" weight="3"/>
 			<select macro="css1_macro" weight="98"/>
 		</group>
-		
+	</replace>
+
+	<add sel="/groups">
 		<!-- Harbor Auxiliary for fleet tender duties -->
 		<group name="sith_xl_resupply">
 			<select macro="ship_gen_resupplier_01_macro" weight="100"/>
@@ -61,11 +61,13 @@
 		
 		<!-- Miners -->
 		<group name="sith_miner_solid_m">
-			<select macro="berea_shuttle_macro" weight="100"/>
+			<select macro="berea_shuttle_macro" weight="5"/>
+			<select macro="gozanti_civ_miner_macro" weight="95"/>
 		</group>
 	  
 		<group name="sith_miner_liquid_m">
-			<select macro="berea_shuttle_gas_macro" weight="100"/>
+			<select macro="berea_shuttle_gas_macro" weight="5"/>
+			<select macro="actioniv_gas_macro" weight="95"/>
 		</group>
 		
 		<group name="sith_miner_solid_l">

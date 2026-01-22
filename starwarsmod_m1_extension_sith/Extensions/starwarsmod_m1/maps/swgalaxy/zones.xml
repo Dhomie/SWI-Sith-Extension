@@ -3,35 +3,6 @@
 
 	<!-- NOTE: Wild Space 1 and 2 are internally named as "ur4", and "ur5", meaning they are part of the unknown region naming scheme -->
     <add sel="//macros">
-	<!-- Connect the Hapes Cluster with MDW frontline -->
-		<!-- Taanab -> Roqoo JG -->
-		<macro name="swi_gate_roqoo_zone_clustertaanab_sector001_macro" class="zone">
-			<component ref="standardzone" />
-			<connections>
-				<connection name="swi_gate_ctaanab_croqoo_connection" ref="gates">
-				<offset>
-					<position x="0" y="500" z="0" />
-					<rotation yaw="300" pitch="0" roll="0" />
-				</offset>
-				<macro ref="props_gates_anc_gate_macro" connection="space" />
-				</connection>
-			</connections>
-		</macro>
-		
-		<!-- Roqoo -> Taanab JG -->
-		<macro name="swi_gate_taanab_zone_clusterroqoo_sector001_macro" class="zone">
-			<component ref="standardzone" />
-			<connections>
-				<connection name="swi_gate_croqoo_ctaanab_connection" ref="gates">
-				<offset>
-					<position x="0" y="500" z="0" />
-					<rotation yaw="120" pitch="0" roll="0" />
-				</offset>
-				<macro ref="props_gates_anc_gate_macro" connection="space" />
-				</connection>
-			</connections>
-		</macro>
-		
 		<!-- Thule -> Ziost JG -->
 		<macro name="swi_gate_ziost_zone_clusterthule_sector001_macro" class="zone">
 			<component ref="standardzone" />

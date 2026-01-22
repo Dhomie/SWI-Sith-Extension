@@ -33,28 +33,7 @@
 						<param name="StationID" value="'sith_equipmentdock_01'" />
 						<param name="Sector" value="$Korriban" />
 					</run_actions>
-					
-					<!-- Ziost Economy Stations -->
-					<run_actions ref="CreateStation">
-						<param name="StationID" value="'sith_ziost_solar_power_plant'" />
-						<param name="Sector" value="$Ziost" />
-					</run_actions>
-					
-					<run_actions ref="CreateStation">
-						<param name="StationID" value="'sith_ziost_durasteel_plant'" />
-						<param name="Sector" value="$Ziost" />
-					</run_actions>
-					
-					<run_actions ref="CreateStation">
-						<param name="StationID" value="'sith_ziost_claytronics_plant'" />
-						<param name="Sector" value="$Ziost" />
-					</run_actions>
-					
-					<run_actions ref="CreateStation">
-						<param name="StationID" value="'sith_ziost_pharmaceutical_plant'" />
-						<param name="Sector" value="$Ziost" />
-					</run_actions>
-					
+
 					<!-- Clean up the values -->
 					<remove_value name="$Korriban" />
 					<remove_value name="$Ziost" />

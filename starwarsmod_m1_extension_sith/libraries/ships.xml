@@ -94,6 +94,11 @@
 			<engine ware="mod_engine_forwardthrust_01_mk3" />
 		</equipmentmods>
 	</add>
+	<add sel="/ships/ship[@id='sith_trader_container_m']">
+		<equipmentmods>
+			<engine ware="mod_engine_forwardthrust_01_mk3" />
+		</equipmentmods>
+	</add>
 	
     <add sel="/ships">
 	<!-- Begin new combat ships -->
@@ -189,18 +194,6 @@
 		</ship>
 	
 	<!-- Begin new civilian ships -->
-		<ship id="sith_trader_container_m" group="sith_trader_container_m">
-			<category tags="[trader, container, mission]" faction="sith" size="ship_m" />
-			<pilot>
-				<select faction="sith" tags="traderpilot" />
-			</pilot>
-			<basket basket="all_container" />
-			<drop ref="ship_medium_civilian" />
-			<people ref="sith_freighter_crew" />
-			<equipmentmods>
-				<engine ware="mod_engine_forwardthrust_01_mk3" />
-			</equipmentmods>
-		</ship>
 		
 		<ship id="sith_miner_solid_m" group="sith_miner_solid_m">
 			<category tags="[miner, solid, mission]" faction="sith" size="ship_m" />

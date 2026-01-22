@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <diff>
-	<add sel="/macros">
-		<!-- Sith Core Space Cluster -->
-		<!--
+	<!-- Sith Core Space Cluster -->
+	<!--<add sel="/macros">
 		<macro name="swi_cluster_sith_core_macro" class="cluster">
 			<component ref="standardcluster" />
 			<connections>
@@ -49,6 +48,5 @@
 				</connection>
 			</connections>
 		</macro>
-		-->
-	</add>
+	</add>-->
 </diff>
